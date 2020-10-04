@@ -14,5 +14,6 @@ int main()
 	cout << "Hello!" << endl;
 	cout << "Kim Eun Sung" << endl;
 	cout << "EZHA" << endl;
+	cout << "Lee Xae-ha" << endl;
 	return 0;
 }
