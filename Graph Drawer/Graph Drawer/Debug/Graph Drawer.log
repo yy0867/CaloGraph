@@ -1,0 +1,15 @@
+﻿  Graph.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\FL\x.H(37,14): fatal error C1083: 포함 파일을 열 수 없습니다. 'X11/Xlib.h': No such file or directory
+  GUI.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\FL\x.H(37,14): fatal error C1083: 포함 파일을 열 수 없습니다. 'X11/Xlib.h': No such file or directory
+  main_shapes.cpp
+D:\학교 자료\2학년\2학기\오픈소스\팀프로젝트\Project\Graph_Drawer\Graph Drawer\Graph Drawer\GUI.h(107,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\학교 자료\2학년\2학기\오픈소스\팀프로젝트\Project\Graph_Drawer\Graph Drawer\Graph Drawer\GUI.h(112,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\학교 자료\2학년\2학기\오픈소스\팀프로젝트\Project\Graph_Drawer\Graph Drawer\Graph Drawer\GUI.h(117,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\학교 자료\2학년\2학기\오픈소스\팀프로젝트\Project\Graph_Drawer\Graph Drawer\Graph Drawer\Graph.h(104,2): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\학교 자료\2학년\2학기\오픈소스\팀프로젝트\Project\Graph_Drawer\Graph Drawer\Graph Drawer\Graph.h(104): message : 클래스 템플릿 멤버 함수 'Graph_lib::Vector_ref<Graph_lib::Rose>::~Vector_ref(void)'을(를) 컴파일하는 중입니다.
+D:\학교 자료\2학년\2학기\오픈소스\팀프로젝트\Project\Graph_Drawer\Graph Drawer\Graph Drawer\main_shapes.cpp(15): message : 컴파일되는 함수 템플릿 인스턴스화 'Graph_lib::Vector_ref<Graph_lib::Rose>::~Vector_ref(void)'에 대한 참조를 확인하세요.
+D:\학교 자료\2학년\2학기\오픈소스\팀프로젝트\Project\Graph_Drawer\Graph Drawer\Graph Drawer\main_shapes.cpp(15): message : 컴파일되는 클래스 템플릿 인스턴스화 'Graph_lib::Vector_ref<Graph_lib::Rose>'에 대한 참조를 확인하세요.
+  Window.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\FL\x.H(37,14): fatal error C1083: 포함 파일을 열 수 없습니다. 'X11/Xlib.h': No such file or directory
+  코드를 생성하고 있습니다...
