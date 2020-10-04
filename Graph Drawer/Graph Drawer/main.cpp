@@ -12,5 +12,6 @@ using namespace std;
 int main()
 {
 	cout << "Hello!" << endl;
+	cout << "Kim Eun Sung" << endl;
 	return 0;
 }
