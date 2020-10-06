@@ -1,0 +1,95 @@
+﻿  main_shapes.cpp
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\GUI.h(107,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\GUI.h(112,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\GUI.h(117,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.h(104,1): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.h(104): message : 클래스 템플릿 멤버 함수 'Graph_lib::Vector_ref<Graph_lib::Tschirnhausen_cubic>::~Vector_ref(void)'을(를) 컴파일하는 중입니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\main_shapes.cpp(14): message : 컴파일되는 함수 템플릿 인스턴스화 'Graph_lib::Vector_ref<Graph_lib::Tschirnhausen_cubic>::~Vector_ref(void)'에 대한 참조를 확인하세요.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\main_shapes.cpp(14): message : 컴파일되는 클래스 템플릿 인스턴스화 'Graph_lib::Vector_ref<Graph_lib::Tschirnhausen_cubic>'에 대한 참조를 확인하세요.
+  Graph.cpp
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(56,26): warning C4244: '=': '_Ty1'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty1=double
+          ]
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(57,26): warning C4244: '=': '_Ty1'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty1=double
+          ]
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(264,46): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(264,23): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(265,49): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(265,35): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(267,44): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(267,37): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(268,56): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(268,49): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(268,37): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(269,56): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(269,49): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(269,25): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(270,68): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(270,61): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(270,49): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(270,25): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(278,54): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(278,22): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(279,58): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(279,22): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(280,66): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(280,34): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(281,74): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(281,38): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(283,40): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(283,35): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(284,46): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(284,41): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(284,34): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(285,46): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(285,41): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(285,22): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(286,52): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(286,47): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(286,40): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(286,22): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(297,53): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(297,16): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(296,48): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(296,22): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(309,56): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(309,16): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(308,59): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(308,23): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(311,56): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(311,16): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(310,65): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(310,23): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(331,72): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(331,16): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(330,61): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(330,23): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(344,92): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(344,16): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(343,61): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.cpp(343,23): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  GUI.cpp
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\GUI.h(107,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\GUI.h(112,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\GUI.h(117,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.h(104,1): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.h(104): message : 클래스 템플릿 멤버 함수 'Graph_lib::Vector_ref<Graph_lib::Button>::~Vector_ref(void)'을(를) 컴파일하는 중입니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\GUI.h(97): message : 컴파일되는 함수 템플릿 인스턴스화 'Graph_lib::Vector_ref<Graph_lib::Button>::~Vector_ref(void)'에 대한 참조를 확인하세요.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\GUI.h(99): message : 컴파일되는 클래스 템플릿 인스턴스화 'Graph_lib::Vector_ref<Graph_lib::Button>'에 대한 참조를 확인하세요.
+  Window.cpp
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\GUI.h(107,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\GUI.h(112,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\GUI.h(117,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Window.cpp(59,17): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Window.cpp(61,15): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.h(104,1): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Graph.h(104): message : 클래스 템플릿 멤버 함수 'Graph_lib::Vector_ref<Graph_lib::Button>::~Vector_ref(void)'을(를) 컴파일하는 중입니다.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\GUI.h(97): message : 컴파일되는 함수 템플릿 인스턴스화 'Graph_lib::Vector_ref<Graph_lib::Button>::~Vector_ref(void)'에 대한 참조를 확인하세요.
+C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\GUI.h(99): message : 컴파일되는 클래스 템플릿 인스턴스화 'Graph_lib::Vector_ref<Graph_lib::Button>'에 대한 참조를 확인하세요.
+  코드를 생성하고 있습니다...
+  fltk_test.vcxproj -> C:\Users\ich09\Desktop\과제\고프\2017203061\fltk_test\Debug\fltk_test.exe
