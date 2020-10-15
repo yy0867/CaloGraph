@@ -1,0 +1,9 @@
+﻿  main_shapes.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\FL\x.H(37,14): fatal error C1083: 포함 파일을 열 수 없습니다. 'X11/Xlib.h': No such file or directory
+  Graph.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\FL\x.H(37,14): fatal error C1083: 포함 파일을 열 수 없습니다. 'X11/Xlib.h': No such file or directory
+  GUI.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\FL\x.H(37,14): fatal error C1083: 포함 파일을 열 수 없습니다. 'X11/Xlib.h': No such file or directory
+  Window.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\FL\x.H(37,14): fatal error C1083: 포함 파일을 열 수 없습니다. 'X11/Xlib.h': No such file or directory
+  코드를 생성하고 있습니다...
