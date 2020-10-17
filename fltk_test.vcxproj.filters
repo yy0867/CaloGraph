@@ -27,6 +27,9 @@
     <ClCompile Include="main_shapes.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Information.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fltk.h">
@@ -50,5 +53,25 @@
     <ClInclude Include="Window.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix11.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MatrixIO.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MatrixIO11.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Information.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="information.txt">
+      <Filter>리소스 파일</Filter>
+    </Text>
   </ItemGroup>
 </Project>
