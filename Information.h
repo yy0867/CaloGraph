@@ -64,7 +64,7 @@ static vector<Information> get_information()
 	vector<Information> infos;
 
 	ifstream read_file;
-	read_file.open("information.txt");
+	read_file.open("../information.txt");
 	if (read_file.is_open()) {
 		while (!read_file.eof()) {
 			char input[sizeof(Information) + 1];

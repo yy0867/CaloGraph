@@ -1,3 +1,14 @@
 ﻿  Information.cpp
 D:\Programming\CaloGraph\yy0867\CaloGraph\Information.h(45,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  main_shapes.cpp
+D:\Programming\CaloGraph\yy0867\CaloGraph\GUI.h(107,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\Programming\CaloGraph\yy0867\CaloGraph\GUI.h(112,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\Programming\CaloGraph\yy0867\CaloGraph\GUI.h(117,39): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\Programming\CaloGraph\yy0867\CaloGraph\Information.h(45,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\Programming\CaloGraph\yy0867\CaloGraph\Graph.h(104,1): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+D:\Programming\CaloGraph\yy0867\CaloGraph\Graph.h(104): message : 클래스 템플릿 멤버 함수 'Graph_lib::Vector_ref<Graph_lib::Button>::~Vector_ref(void)'을(를) 컴파일하는 중입니다.
+D:\Programming\CaloGraph\yy0867\CaloGraph\GUI.h(97): message : 컴파일되는 함수 템플릿 인스턴스화 'Graph_lib::Vector_ref<Graph_lib::Button>::~Vector_ref(void)'에 대한 참조를 확인하세요.
+D:\Programming\CaloGraph\yy0867\CaloGraph\GUI.h(99): message : 컴파일되는 클래스 템플릿 인스턴스화 'Graph_lib::Vector_ref<Graph_lib::Button>'에 대한 참조를 확인하세요.
+  코드를 생성하고 있습니다...
+  LINK : D:\Programming\CaloGraph\yy0867\CaloGraph\Debug\fltk_test.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
   fltk_test.vcxproj -> D:\Programming\CaloGraph\yy0867\CaloGraph\Debug\fltk_test.exe
