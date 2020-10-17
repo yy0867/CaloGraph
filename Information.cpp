@@ -12,7 +12,7 @@ Information::Information(string name, bool gender, int age, int height, int weig
 int Information::save_information(Information info)
 {
 	ifstream read_file;
-	read_file.open("information.txt");
+	read_file.open("../information.txt");
 
 	return 0;
 }

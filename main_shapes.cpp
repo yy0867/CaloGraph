@@ -3,6 +3,7 @@
 #include "Information.h"
 #include <iostream>
 #include <vector>
+#include <conio.h>
 
 using namespace std;
 
@@ -19,6 +20,9 @@ int main() {
 	for (Information i : info) {
 		cout << i.get_name() << " " << (i.get_gender() ? "male " : "female ") << i.get_age() << " " << i.get_height() << " " << i.get_weight() << endl;
 	}
+
+	cout << "press any key to continue...";
+	_getch();
 
 	return 0;
 }
