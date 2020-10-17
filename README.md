@@ -1,9 +1,3 @@
-# Graph_Drawer
+# CaloGraph
 
-This program is a graph drawing program, when you enter a simple formula.
-
-# Goals to Achieve
-
-1. If you enter a formula, the program will analyze/calculate it.
-2. If the program can analyze it, it will draw a graph.
-3. Provide [Polynomial Function] [Exponential Function] [Logarithmic Function] [Trigonometric Function]
+This Program is Calculate the Nutritions, and represent to Graph.
