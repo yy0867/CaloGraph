@@ -2,3 +2,5 @@ D:\Programming\GitHub\yy0867\Graph_Drawer\Debug\fltk_test.exe
 D:\Programming\GitHub\yy0867\Graph_Drawer\Debug\fltk_test.pdb
 D:\Programming\CaloGraph\yy0867\CaloGraph\Debug\fltk_test.exe
 D:\Programming\CaloGraph\yy0867\CaloGraph\Debug\fltk_test.pdb
+C:\Users\smart\source\repos\yy0867\CaloGraph\Debug\fltk_test.exe
+C:\Users\smart\source\repos\yy0867\CaloGraph\Debug\fltk_test.pdb
