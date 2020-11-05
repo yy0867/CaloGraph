@@ -57,4 +57,9 @@ void print_menu()
 	cout << "3. 사용자 삭제" << endl;
 }
 
+void cursor()
+{
+
+}
+
 #endif
