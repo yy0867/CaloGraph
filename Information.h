@@ -89,4 +89,7 @@ static vector<Information> get_information()
 }
 //*** Read Information from txt file ***//
 
+void save_to_txt(vector<Information> infos);
+void del_information(Information target);	//Delete Information from txt file
+
 #endif
