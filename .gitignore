@@ -1,6 +1,9 @@
 /.vs
 .vs/
 
+/Debug
+Debug/
+
 # Prerequisites
 *.d
 
@@ -29,5 +32,6 @@
 *.lib
 
 # Executables
+*.exe
 *.out
 *.app
