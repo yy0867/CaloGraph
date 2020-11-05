@@ -141,13 +141,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Calo_UI.cpp" />
     <ClCompile Include="Information.cpp" />
     <ClCompile Include="main_shapes.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="GUI.cpp" />
     <ClCompile Include="Window.cpp" />
+    <ClCompile Include="소스.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Calo_UI.h" />
     <ClInclude Include="fltk.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="GUI.h" />

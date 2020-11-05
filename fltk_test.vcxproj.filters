@@ -30,6 +30,12 @@
     <ClCompile Include="Information.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Calo_UI.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="소스.cpp">
+      <Filter>헤더 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fltk.h">
@@ -66,6 +72,9 @@
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="Information.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Calo_UI.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

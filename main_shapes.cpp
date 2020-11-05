@@ -1,6 +1,7 @@
-#include "Graph.h"
-#include "Simple_window.h"
+//#include "Graph.h"
+//#include "Simple_window.h"
 #include "Information.h"
+#include "Calo_UI.h"
 #include <iostream>
 #include <vector>
 #include <conio.h>
@@ -13,14 +14,12 @@ void print()
 }
 
 int main() {
-	vector<Information> info;
+	system(" mode  con lines=50   cols=130 ");
 
-	info = get_information();
+	print_edge();
+	print_menu();
 
-	for (Information i : info) {
-		cout << i.get_name() << " " << (i.get_gender() ? "male " : "female ") << i.get_age() << " " << i.get_height() << " " << i.get_weight() << endl;
-	}
-
+	gotoxy(0, 32);
 	cout << "press any key to continue...";
 	_getch();
 
