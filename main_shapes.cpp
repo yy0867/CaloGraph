@@ -23,7 +23,7 @@ int main() {
 		print_menu();
 
 		gotoxy(0, 32);
-	
+		cout << "Press ESC to exit..." << endl;
 		t = _getch();
 		if (t == 27) break;
 	}
