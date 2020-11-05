@@ -1,5 +1,0 @@
-﻿  food_information.cpp
-C:\Users\smart\source\repos\yy0867\CaloGraph\food_information.cpp(10,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\smart\source\repos\yy0867\CaloGraph\food_information.cpp(34,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\smart\source\repos\yy0867\CaloGraph\food_information.cpp(101,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-  fltk_test.vcxproj -> C:\Users\smart\Source\Repos\yy0867\CaloGraph\Debug\fltk_test.exe
