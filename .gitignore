@@ -7,7 +7,14 @@ Debug/
 # Prerequisites
 *.d
 
+# Log files
+*.log
+*.tlog
+*.pdb
+*.idb
+
 # Compiled Object files
+*.obj
 *.slo
 *.lo
 *.o
@@ -30,6 +37,7 @@ Debug/
 *.la
 *.a
 *.lib
+*.ilk
 
 # Executables
 *.exe
