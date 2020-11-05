@@ -79,3 +79,32 @@ void Information::set_information(string name, bool gender, int age, int height,
 	set_weight(weight);
 }
 
+void save_to_txt(vector<Information> infos) 
+{
+	ofstream write;
+	write.open("Information.txt");
+
+	if (write.is_open()) {
+		for (Information info : infos) {
+			const char* temp = info.convert_string().c_str();
+
+			write.write(temp, strlen(temp));
+		}
+	}
+
+	write.close();
+}
+
+void del_information(Information target) 
+{
+	vector<Information> infos = get_information();
+	vector<Information>::iterator itr;
+	
+	for (itr = infos.begin(); itr != infos.end(); ++itr) {
+		if (*itr == target) break;
+	}
+
+	infos.erase(itr);
+
+	save_to_txt(infos);
+}
