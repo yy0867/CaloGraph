@@ -1,5 +1,0 @@
-﻿  main_shapes.cpp
-D:\Programming\CaloGraph\yy0867\CaloGraph\Information.h(55,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-D:\Programming\CaloGraph\yy0867\CaloGraph\Calo_UI.h(23,16): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-D:\Programming\CaloGraph\yy0867\CaloGraph\Calo_UI.h(23,18): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-  fltk_test.vcxproj -> D:\Programming\CaloGraph\yy0867\CaloGraph\Debug\fltk_test.exe
