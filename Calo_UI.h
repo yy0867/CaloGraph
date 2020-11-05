@@ -4,6 +4,7 @@
 #include <Windows.h>
 #include <iostream>
 #include <string>
+#include <utility>
 
 using namespace std;
 
@@ -47,13 +48,17 @@ void print_edge()
 
 void print_menu()
 {
-	gotoxy(40, 20);
+	pair<int, int> menu_1 = make_pair(40, 20);
+	pair<int, int> menu_2 = make_pair(40, 22);
+	pair<int, int> menu_3 = make_pair(40, 24);
+
+	gotoxy(menu_1.first, menu_1.second);
 	cout << "1. 사용자 생성" << endl;
 
-	gotoxy(40, 22);
+	gotoxy(menu_2.first, menu_2.second);
 	cout << "2. 사용자 선택" << endl;
 
-	gotoxy(40, 24);
+	gotoxy(menu_3.first, menu_3.second);
 	cout << "3. 사용자 삭제" << endl;
 }
 
