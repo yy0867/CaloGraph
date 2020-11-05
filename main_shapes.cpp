@@ -2,6 +2,7 @@
 //#include "Simple_window.h"
 #include "Information.h"
 #include "Calo_UI.h"
+#include "food_information.h"
 #include <iostream>
 #include <vector>
 #include <conio.h>
@@ -14,6 +15,11 @@ void print()
 }
 
 int main() {
+	Foods_info finfo;
+
+	finfo.print_foods_info();
+	
+	/*
 	system(" mode  con lines=50   cols=130 ");
 
 	char t;
@@ -27,6 +33,6 @@ int main() {
 		t = _getch();
 		if (t == 27) break;
 	}
-
+	*/
 	return 0;
 }
