@@ -1,10 +1,18 @@
 #include "Calo_UI.h"
+#include <Windows.h>
 
-
+void textcolor(int foreground, int background)
+{
+	int color = foreground + background * 16;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+}
 
 void c_main_menu()
 {
+	gotoxy(menu_1.first, menu_1.second);
 
+	textcolor(BLACK, LIGHTGRAY);
+	
 }
 
 void c_usr_creat() 
