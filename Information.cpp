@@ -86,9 +86,10 @@ void save_to_txt(vector<Information> infos)
 
 	if (write.is_open()) {
 		for (Information info : infos) {
-			const char* temp = info.convert_string().c_str();
+			string temp = info.convert_string();
+			const char* str = temp.c_str();
 
-			write.write(temp, strlen(temp));
+			write.write(str, strlen(str));
 		}
 	}
 
