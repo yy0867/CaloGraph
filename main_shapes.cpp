@@ -22,6 +22,7 @@ int main() {
 		print_edge();
 		print_menu();
 
+		//Press ESC to Exit
 		gotoxy(0, 32);
 		cout << "Press ESC to exit..." << endl;
 		t = _getch();
