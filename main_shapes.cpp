@@ -16,12 +16,17 @@ void print()
 int main() {
 	system(" mode  con lines=50   cols=130 ");
 
-	print_edge();
-	print_menu();
+	char t;
 
-	gotoxy(0, 32);
-	cout << "press any key to continue...";
-	_getch();
+	while (1) {
+		print_edge();
+		print_menu();
+
+		gotoxy(0, 32);
+	
+		t = _getch();
+		if (t == 27) break;
+	}
 
 	return 0;
 }
