@@ -47,8 +47,14 @@ void print_edge()
 
 void print_menu()
 {
-	gotoxy(40, 10);
+	gotoxy(40, 20);
 	cout << "1. 사용자 생성" << endl;
+
+	gotoxy(40, 22);
+	cout << "2. 사용자 선택" << endl;
+
+	gotoxy(40, 24);
+	cout << "3. 사용자 삭제" << endl;
 }
 
 #endif
