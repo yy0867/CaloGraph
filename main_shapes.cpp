@@ -1,5 +1,6 @@
 //#include "Graph.h"
 //#include "Simple_window.h"
+#include "food_information.h"
 #include "Information.h"
 #include "Calo_UI.h"
 #include "food_information.h"
@@ -26,14 +27,17 @@ int main() {
 
 	while (1) {
 		print_edge();
-		print_menu();
-
-		//Press ESC to Exit
-		gotoxy(0, 32);
-		cout << "Press ESC to exit..." << endl;
+		
 		t = _getch();
+<<<<<<< HEAD
 		if (t == 27) break;
 	}
 	*/
+=======
+		if (t == 27) break; //ESC
+
+		print_main_menu();
+	}
+>>>>>>> origin/main
 	return 0;
 }
