@@ -29,7 +29,7 @@ using namespace std;
 #define YELLOW 14 
 #define WHITE 15 
 
-enum class KEY { UP = 72, DOWN = 80, LEFT = 75, RIGHT = 77, ENTER = 13, ESC = 27 };
+enum class KEY { UP, DOWN, LEFT, RIGHT, ENTER, ESC, NONE };
 
 const string TOP_LEFT = "¦£";
 const string TOP_RIGHT = "¦¤";
@@ -51,6 +51,6 @@ void print_edge();
 void print_main_menu();
 void print_textbox(pair<int, int> lu, string msg); //ru: right up, ld: left down
 void cursor(vector<pair<int, int>> sels, vector<string> msgs);
-void get_key();
+KEY get_key();
 
 #endif

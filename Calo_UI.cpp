@@ -90,3 +90,24 @@ void cursor(vector<pair<int, int>> sels, vector<string> msgs)
 		if (t == 27) break; //ESC
 	}
 }
+
+KEY get_key()
+{
+	char t = _getch();
+	switch (t) {
+	case 72:
+		return KEY::UP;
+	case 80:
+		return KEY::DOWN;
+	case 75:
+		return KEY::LEFT;
+	case 77:
+		return KEY::RIGHT;
+	case 13:
+		return KEY::ENTER;
+	case 27:
+		return KEY::ESC;
+	}
+
+	return KEY::NONE;
+}
