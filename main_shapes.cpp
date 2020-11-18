@@ -2,6 +2,7 @@
 //#include "Simple_window.h"
 #include "food_information.h"
 #include "Information.h"
+#include "Calo_UI.h"
 #include <iostream>
 #include <vector>
 #include <conio.h>
@@ -14,23 +15,17 @@ void print()
 }
 
 int main() {
-	Foods_info xaeha;
-	xaeha.print_foods_info();
-	/*
 	system(" mode  con lines=50   cols=130 ");
 
 	char t;
 
 	while (1) {
 		print_edge();
-		print_menu();
-
-		//Press ESC to Exit
-		gotoxy(0, 32);
-		cout << "Press ESC to exit..." << endl;
+		
 		t = _getch();
-		if (t == 27) break;
+		if (t == 27) break; //ESC
+
+		print_main_menu();
 	}
-	*/
 	return 0;
 }
