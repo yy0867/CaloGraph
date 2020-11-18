@@ -142,6 +142,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Calo_UI.cpp" />
+    <ClCompile Include="DatePerNutrition.cpp" />
+    <ClCompile Include="food_information.cpp" />
     <ClCompile Include="Information.cpp" />
     <ClCompile Include="main_shapes.cpp" />
     <ClCompile Include="Graph.cpp" />
@@ -151,7 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Calo_UI.h" />
+    <ClInclude Include="DatePerNutrition.h" />
     <ClInclude Include="fltk.h" />
+    <ClInclude Include="food_information.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="GUI.h" />
     <ClInclude Include="Information.h" />
@@ -165,6 +169,7 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="food_info.txt" />
     <Text Include="information.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

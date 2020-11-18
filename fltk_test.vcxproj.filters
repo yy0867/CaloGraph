@@ -36,6 +36,12 @@
     <ClCompile Include="소스.cpp">
       <Filter>헤더 파일</Filter>
     </ClCompile>
+    <ClCompile Include="food_information.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DatePerNutrition.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fltk.h">
@@ -77,10 +83,17 @@
     <ClInclude Include="Calo_UI.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="food_information.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DatePerNutrition.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="information.txt">
       <Filter>리소스 파일</Filter>
     </Text>
+    <Text Include="food_info.txt" />
   </ItemGroup>
 </Project>

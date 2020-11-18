@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fltk_test", "fltk_test.vcxproj", "{5E618BF5-CDEC-41F5-B951-D3D8B686408B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{558AE7C4-A3B6-4974-B4AF-3C5BB4BBD53B}"
+	ProjectSection(SolutionItems) = preProject
+		food_information.cpp = food_information.cpp
+		food_information.h = food_information.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

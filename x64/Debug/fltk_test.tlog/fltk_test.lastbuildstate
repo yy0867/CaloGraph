@@ -1,2 +1,6 @@
 PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.27.29110:TargetPlatformVersion=10.0.18362.0:
+<<<<<<< HEAD
 Debug|x64|D:\CaloGraph\|
+=======
+Debug|x64|C:\Users\smart\Source\Repos\yy0867\CaloGraph\|
+>>>>>>> 0d86ddce31ec01a9c2cbfb92839e750c2727985c
