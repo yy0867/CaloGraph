@@ -1,8 +1,13 @@
 ﻿  Calo_UI.cpp
   Information.cpp
   main_shapes.cpp
+<<<<<<< HEAD
+D:\CaloGraph\Calo_UI.h(23,16): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+D:\CaloGraph\Calo_UI.h(23,18): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+=======
 C:\Users\smart\source\repos\yy0867\CaloGraph\Calo_UI.h(23,16): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
 C:\Users\smart\source\repos\yy0867\CaloGraph\Calo_UI.h(23,18): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+>>>>>>> 0d86ddce31ec01a9c2cbfb92839e750c2727985c
   Graph.cpp
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\FL\x.H(37,14): fatal error C1083: 포함 파일을 열 수 없습니다. 'X11/Xlib.h': No such file or directory
   GUI.cpp
