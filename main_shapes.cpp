@@ -14,6 +14,8 @@ void print()
 }
 
 int main() {
+	
+	/*
 	system(" mode  con lines=50   cols=130 ");
 
 	char t;
@@ -26,5 +28,6 @@ int main() {
 
 		print_main_menu();
 	}
+	*/
 	return 0;
 }
