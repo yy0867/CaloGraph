@@ -1,5 +1,4 @@
-//#include "Graph.h"
-//#include "Simple_window.h"
+#include "drawing_graph.h"
 #include "food_information.h"
 #include "Information.h"
 #include "Calo_UI.h"
