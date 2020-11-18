@@ -6,7 +6,6 @@
 #include "food_information.h"
 #include <iostream>
 #include <vector>
-#include <conio.h>
 
 using namespace std;
 
@@ -23,10 +22,11 @@ int main() {
 	/*
 	system(" mode  con lines=50   cols=130 ");
 
-	char t;
+	init_calo_ui();
 
 	while (1) {
 		print_edge();
+<<<<<<< HEAD
 		
 		t = _getch();
 <<<<<<< HEAD
@@ -36,6 +36,8 @@ int main() {
 =======
 		if (t == 27) break; //ESC
 
+=======
+>>>>>>> origin/main
 		print_main_menu();
 	}
 >>>>>>> origin/main
