@@ -14,5 +14,5 @@ Drawing::~Drawing()
 
 void Drawing::attachAxis(int x, int y)
 {
-
+	fl_line(x, y, x + GRAPH_WIDTH, y + GRAPH_WIDTH);
 }

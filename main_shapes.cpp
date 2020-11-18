@@ -3,7 +3,7 @@
 #include "food_information.h"
 #include "Information.h"
 #include "Calo_UI.h"
-#include "food_information.h"
+#include "drawing_graph.h"
 #include <iostream>
 #include <vector>
 
@@ -15,10 +15,9 @@ void print()
 }
 
 int main() {
-	Foods_info finfo;
-
-	finfo.print_foods_info();
-	
+	Drawing draw(Point(150,150),1000,800,"window");
+	draw.attachAxis(200, 200);
+	draw.winp()->wait_for_button();
 	/*
 	system(" mode  con lines=50   cols=130 ");
 
@@ -32,7 +31,7 @@ int main() {
 <<<<<<< HEAD
 		if (t == 27) break;
 	}
-	*/
+	
 =======
 		if (t == 27) break; //ESC
 
@@ -41,5 +40,6 @@ int main() {
 		print_main_menu();
 	}
 >>>>>>> origin/main
+*/
 	return 0;
 }
