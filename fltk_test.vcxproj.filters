@@ -42,12 +42,9 @@
     <ClCompile Include="DatePerNutrition.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="drawing_graph.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-=======
->>>>>>> origin/main
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fltk.h">
@@ -95,12 +92,9 @@
     <ClInclude Include="DatePerNutrition.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="drawing_graph.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-=======
->>>>>>> origin/main
   </ItemGroup>
   <ItemGroup>
     <Text Include="information.txt">
