@@ -17,7 +17,7 @@ void Information::save_information(vector<Information> info)
 
 	if (write_file.is_open()) {
 		Information target = *this;
-		if (find(info.begin(), info.end(), target) != info.end()) {
+		if (find(info.begin(), info.end(), target) == info.end()) {
 			string temp = convert_string();
 			const char* write_string = temp.c_str();
 			write_file.write(write_string, strlen(write_string));

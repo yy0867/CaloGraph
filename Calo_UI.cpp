@@ -166,8 +166,14 @@ void print_user_create()
 	system("cls");
 	print_edge();
 
-	gotoxy(10, 10);
-	cout << "create";
+	Information info;
+	info.input_information();
+
+	vector<Information> infos;
+	infos = get_information();
+	info.save_information(infos);
+
+	save_to_txt(infos);
 }
 
 void print_user_del()
