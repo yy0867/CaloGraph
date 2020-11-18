@@ -34,6 +34,9 @@ void print_edge();
 void print_main_menu();
 void print_textbox(pair<int, int> lu, string msg); //ru: right up, ld: left down
 int cursor(vector<pair<int, int>> sels, vector<string> msgs);
+void print_user_sel();
+void print_user_create();
+void print_user_del();
 KEY get_key();
 
 #endif
