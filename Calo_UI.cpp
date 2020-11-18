@@ -88,7 +88,10 @@ int cursor(vector<pair<int, int>> sels, vector<string> msgs)
 		cout << "¢º";
 
 		key = get_key();
-		if (key == KEY::ESC) exit(1);
+		if (key == KEY::ESC) {
+			gotoxy(0, 32);
+			exit(1);
+		}
 		else if (key == KEY::ENTER) return i;
 		
 		switch(key) {
