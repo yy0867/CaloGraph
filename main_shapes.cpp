@@ -1,5 +1,4 @@
-//#include "Graph.h"
-//#include "Simple_window.h"
+#include "drawing_graph.h"
 #include "food_information.h"
 #include "Information.h"
 #include "Calo_UI.h"
@@ -15,9 +14,11 @@ void print()
 }
 
 int main() {
+
 	Drawing draw(Point(150,150),1000,800,"window");
 	draw.attachAxis(200, 200);
 	draw.winp()->wait_for_button();
+
 	/*
 	system(" mode  con lines=50   cols=130 ");
 
@@ -39,6 +40,7 @@ int main() {
 >>>>>>> origin/main
 		print_main_menu();
 	}
+<<<<<<< HEAD
 >>>>>>> origin/main
 */
 	return 0;
