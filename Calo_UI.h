@@ -12,23 +12,6 @@ using namespace std;
 #define EDGE_WIDTH 100
 #define EDGE_HEIGHT 30
 
-#define BLACK 0 
-#define BLUE 1 
-#define GREEN 2 
-#define CYAN 3 
-#define RED 4 
-#define MAGENTA 5 
-#define BROWN 6 
-#define LIGHTGRAY 7 
-#define DARKGRAY 8 
-#define LIGHTBLUE 9 
-#define LIGHTGREEN 10 
-#define LIGHTCYAN 11 
-#define LIGHTRED 12 
-#define LIGHTMAGENTA 13 
-#define YELLOW 14 
-#define WHITE 15 
-
 enum class KEY { UP, DOWN, LEFT, RIGHT, ENTER, ESC, NONE };
 
 const string TOP_LEFT = "¦£";
@@ -50,7 +33,7 @@ void goto_origin();
 void print_edge();
 void print_main_menu();
 void print_textbox(pair<int, int> lu, string msg); //ru: right up, ld: left down
-void cursor(vector<pair<int, int>> sels, vector<string> msgs);
+int cursor(vector<pair<int, int>> sels, vector<string> msgs);
 KEY get_key();
 
 #endif

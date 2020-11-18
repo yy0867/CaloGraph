@@ -17,11 +17,6 @@ void gotoxy(pair<int, int> coord)
 
 void goto_origin() { gotoxy(0, 0); }
 
-void set_color(int color)
-{
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
-}
-
 void init_calo_ui()
 {
 	menu_coord.push_back(menu_1);
@@ -82,13 +77,36 @@ void print_main_menu()
 	cursor(menu_coord, main_menu_sel);
 }
 
-void cursor(vector<pair<int, int>> sels, vector<string> msgs)
+int cursor(vector<pair<int, int>> sels, vector<string> msgs)
 {
+	int i = 0;
+	KEY key;
 	while (1) {
-		gotoxy(0, 32);
-		char t = _getch();
-		if (t == 27) break; //ESC
+		pair<int, int> t = make_pair(menu_coord[i].first - 2, menu_coord[i].second + 2);
+		gotoxy(t);
+
+		cout << "¢º";
+
+		key = get_key();
+		if (key == KEY::ESC) exit(1);
+		else if (key == KEY::ENTER) return i;
+		
+		switch(key) {
+		case KEY::UP:
+			gotoxy(t);
+			cout << " ";
+			i -= 1;
+			if (i < 0) i = 2;
+			break;
+		case KEY::DOWN:
+			gotoxy(t);
+			cout << " ";
+			i = (i + 1) % 3;
+			break;
+		}
 	}
+
+	return -1;
 }
 
 KEY get_key()
