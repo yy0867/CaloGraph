@@ -1,7 +1,4 @@
 #include "Information.h"
-#include <iostream>
-#include <string>
-#include <algorithm>
 
 using namespace std;
 
@@ -10,21 +7,14 @@ Information::Information(string name, bool gender, int age, int height, int weig
 	set_information(name, gender, age, height, weight);
 }
 
-void Information::save_information(vector<Information> info)
+vector<Information> Information::save_information(vector<Information> info)
 {
-	ofstream write_file;
-	write_file.open("information.txt", fstream::out | fstream::app); //***test: information.txt*** | ***Release: ../information.txt***
-
-	if (write_file.is_open()) {
-		Information target = *this;
-		if (find(info.begin(), info.end(), target) != info.end()) {
-			string temp = convert_string();
-			const char* write_string = temp.c_str();
-			write_file.write(write_string, strlen(write_string));
-		}
+	Information target = *this;
+	if (find(info.begin(), info.end(), target) == info.end()) {
+		info.push_back(target);
 	}
 
-	write_file.close();
+	return info;
 }
 
 //Read Information from Console
@@ -82,7 +72,7 @@ void Information::set_information(string name, bool gender, int age, int height,
 void save_to_txt(vector<Information> infos) 
 {
 	ofstream write;
-	write.open("Information.txt");
+	write.open("information.txt");
 
 	if (write.is_open()) {
 		for (Information info : infos) {
