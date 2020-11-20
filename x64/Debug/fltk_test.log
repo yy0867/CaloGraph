@@ -1,1 +1,20 @@
+<<<<<<< HEAD
 ﻿C:\Users\smart\source\repos\yy0867\CaloGraph\fltk_test.vcxproj : error MSB4025: 프로젝트 파일을 로드할 수 없습니다. 'C:\Users\smart\source\repos\yy0867\CaloGraph\fltk_test.vcxproj' 파일을 찾을 수 없습니다.
+=======
+﻿  Calo_UI.cpp
+C:\Users\jaeha\source\repos\CaloGraph\CaloGraph\Calo_UI.cpp(4,16): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\jaeha\source\repos\CaloGraph\CaloGraph\Calo_UI.cpp(4,19): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+  compare_data.cpp
+  DatePerNutrition.cpp
+  food_information.cpp
+  Information.cpp
+  main_shapes.cpp
+  Graph.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\FL\x.H(37,14): fatal error C1083: 포함 파일을 열 수 없습니다. 'X11/Xlib.h': No such file or directory
+  GUI.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\FL\x.H(37,14): fatal error C1083: 포함 파일을 열 수 없습니다. 'X11/Xlib.h': No such file or directory
+  Window.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\FL\x.H(37,14): fatal error C1083: 포함 파일을 열 수 없습니다. 'X11/Xlib.h': No such file or directory
+  소스.cpp
+  코드를 생성하고 있습니다...
+>>>>>>> 40ef86cfb155c690beceb7e17a00ecc26bd91dd1
