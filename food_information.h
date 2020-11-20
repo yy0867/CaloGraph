@@ -58,7 +58,6 @@ public:
 	void print_foods_info();
 
 	void read_from_file();
-	void write_on_file();
 
 	size_t getSize() const { return foods.size(); }
 
