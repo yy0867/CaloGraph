@@ -1,6 +1,5 @@
 #include "Calo_UI.h"
 #include "Information.h"
-#include <conio.h>
 
 vector<pair<int, int>> menu_coord;
 vector<string> main_menu_sel;
@@ -166,8 +165,14 @@ void print_user_create()
 	system("cls");
 	print_edge();
 
-	gotoxy(10, 10);
-	cout << "create";
+	Information info;
+	info.input_information();
+
+	vector<Information> infos;
+	infos = get_information();
+	infos = info.save_information(infos);
+
+	save_to_txt(infos);
 }
 
 void print_user_del()

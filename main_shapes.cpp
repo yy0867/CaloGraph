@@ -14,32 +14,14 @@ void print()
 }
 
 int main() {
-	Drawing draw(Point(150,150),1000,800,"CaloGraph");
-	Person_info pinfo("woman.txt");
-	draw.drawPersonInfo(draw,pinfo,WOMAN);
-	/*
 	system(" mode  con lines=50   cols=130 ");
 
 	init_calo_ui();
 
 	while (1) {
 		print_edge();
-<<<<<<< HEAD
-		
-		t = _getch();
-<<<<<<< HEAD
-		if (t == 27) break;
-	}
-	
-=======
-		if (t == 27) break; //ESC
 
-=======
->>>>>>> origin/main
 		print_main_menu();
 	}
-<<<<<<< HEAD
->>>>>>> origin/main
-*/
 	return 0;
 }
