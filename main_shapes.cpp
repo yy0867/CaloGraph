@@ -1,8 +1,8 @@
-//#include "Graph.h"
-//#include "Simple_window.h"
+#include "drawing_graph.h"
 #include "food_information.h"
 #include "Information.h"
 #include "Calo_UI.h"
+#include "drawing_graph.h"
 #include <iostream>
 #include <vector>
 
@@ -20,6 +20,7 @@ int main() {
 
 	while (1) {
 		print_edge();
+
 		print_main_menu();
 	}
 	return 0;

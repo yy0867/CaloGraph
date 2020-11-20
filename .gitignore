@@ -18,7 +18,6 @@ Debug/
 *.slo
 *.lo
 *.o
-*.vcxproj
 *.filters
 
 # Precompiled Headers
