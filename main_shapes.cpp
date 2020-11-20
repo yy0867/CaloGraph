@@ -14,11 +14,9 @@ void print()
 }
 
 int main() {
-
-	Drawing draw(Point(150,150),1000,800,"window");
-	draw.attachAxis(200, 200);
-	draw.winp()->wait_for_button();
-
+	Drawing draw(Point(150,150),1000,800,"CaloGraph");
+	Person_info pinfo("woman.txt");
+	draw.drawPersonInfo(draw,pinfo,WOMAN);
 	/*
 	system(" mode  con lines=50   cols=130 ");
 

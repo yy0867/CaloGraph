@@ -29,7 +29,6 @@ public:
 	void print_foods_info();
 
 	void read_from_file();
-	void write_on_file();
 
 private:
 	vector<Foods> foods;

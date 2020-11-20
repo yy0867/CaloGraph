@@ -79,21 +79,18 @@ void Foods_info::read_from_file()
 	ifs.close();
 }
 
-void Foods_info::write_on_file()
+void Foods_info::add_food(Foods source)
 {
-	ofstream ofs("food_info.txt");
+	foods.push_back(source);
+
+	fstream ofs("food_info.txt", fstream::out | fstream::app);
 	if (ofs.is_open())
 	{
-
+		ofs << "\n"+source.get_one_info();
 	}
 	else cout << "file doesn't exist";
 
 	ofs.close();
-}
-
-void Foods_info::add_food(Foods source)
-{
-	foods.push_back(source);
 }
 
 void Foods_info::print_foods_info()
