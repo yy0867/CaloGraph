@@ -156,8 +156,6 @@ void print_user_sel()
 	}
 
 	cursor(coords, names);
-
-	cout << "sel";
 }
 
 void print_user_create()
@@ -180,8 +178,23 @@ void print_user_del()
 	system("cls");
 	print_edge();
 
-	gotoxy(10, 10);
-	cout << "del";
+	int i = 0;
+	vector<Information> infos;
+	infos = get_information();
+
+	vector<string> names;
+	vector<pair<int, int>> coords;
+
+	for (Information info : infos) {
+		gotoxy(5, (++i) * 2);
+		coords.push_back(make_pair(4, i * 2));
+		cout << info.get_name() << endl;
+	}
+
+	int index = cursor(coords, names);
+	infos.erase(infos.begin() + index);
+
+	save_to_txt(infos);
 }
 
 KEY get_key()
