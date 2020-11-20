@@ -14,6 +14,7 @@ void print()
 }
 
 int main() {
+	//for commit[주석만 지워주셈]//
 	system(" mode  con lines=50   cols=130 ");
 
 	init_calo_ui();
