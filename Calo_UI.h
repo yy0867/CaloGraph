@@ -6,11 +6,12 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <conio.h>
 
 using namespace std;
 
 #define EDGE_WIDTH 100
-#define EDGE_HEIGHT 30
+#define EDGE_HEIGHT 31
 
 enum class KEY { UP, DOWN, LEFT, RIGHT, ENTER, ESC, NONE };
 
@@ -30,10 +31,13 @@ void init_calo_ui();
 void gotoxy(int x, int y);
 void gotoxy(pair<int, int> coord);
 void goto_origin();
-void print_edge();
+void print_edge(int height = EDGE_HEIGHT, int width = EDGE_WIDTH);
 void print_main_menu();
 void print_textbox(pair<int, int> lu, string msg); //ru: right up, ld: left down
 int cursor(vector<pair<int, int>> sels, vector<string> msgs);
+void print_user_sel();
+void print_user_create();
+void print_user_del();
 KEY get_key();
 
 #endif
