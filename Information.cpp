@@ -49,7 +49,7 @@ void Information::input_information()
 		}
 		gotoxy(3, y);
 		y += 3;
-		cout << "1과 2중 선택해주세요. \n1. 남자    2. 여자 >> ";
+		cout << "1과 2중 선택해주세요. >> ";
 	}
 
 	gotoxy(3, y);
