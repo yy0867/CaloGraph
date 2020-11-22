@@ -15,8 +15,8 @@ void print()
 
 int main() {
 	Drawing draw(Point(150,150),1000,800,"CaloGraph");
-	Person_info pinfo("woman.txt");
-	draw.drawPersonInfo(draw,pinfo,WOMAN);
+	Person_info pinfo("man.txt");
+	draw.drawPersonInfo(draw,pinfo,MAN);
 	/*
 	system(" mode  con lines=50   cols=130 ");
 
