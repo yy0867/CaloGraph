@@ -1,9 +1,9 @@
-//#include "Graph.h"
-//#include "Simple_window.h"
+#include "drawing_graph.h"
 #include "food_information.h"
 #include "Information.h"
 #include "Calo_UI.h"
 #include "compare_data.h"
+#include "drawing_graph.h"
 #include <iostream>
 #include <vector>
 
@@ -15,19 +15,12 @@ void print()
 }
 
 int main() {
-	/*system(" mode  con lines=50   cols=130 ");
+	Foods_info xaeha;
 
-	init_calo_ui();
+	Food new_food(L"¿Ã¿Á«œ", 100, 100, 100, 100);
+	xaeha.add_food(new_food);
 
-	while (1) {
-		print_edge();
-		print_main_menu();
-	}*/
-	string username;
-	cout << "username : ";
-	cin >> username;
-	dates test;
+	xaeha.print_foods_info();
 
-	test.OpenFile(username);
 	return 0;
 }

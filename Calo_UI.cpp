@@ -1,8 +1,11 @@
 #include "Calo_UI.h"
-#include <conio.h>
+#include "Information.h"
 
 vector<pair<int, int>> menu_coord;
 vector<string> main_menu_sel;
+vector<string> user_sel_sel;
+vector<string> user_del_sel;
+vector<string> user_create_sel;
 
 void gotoxy(int x, int y) {
 	COORD pos = { x, y };
@@ -28,19 +31,19 @@ void init_calo_ui()
 	main_menu_sel.push_back("3. Delete User");
 }
 
-void print_edge()
+void print_edge(int height, int width)
 {
 	system("cls");
 
 	goto_origin();
-	for (int i = 1; i <= EDGE_HEIGHT; i++) {
-		for (int j = 1; j <= EDGE_WIDTH; j++) {
+	for (int i = 1; i <= height; i++) {
+		for (int j = 1; j <= width; j++) {
 			if (i == 1 && j == 1) cout << TOP_LEFT;
-			else if (i == 1 && j == EDGE_WIDTH) cout << TOP_RIGHT;
-			else if (i == EDGE_HEIGHT && j == 1) cout << BOTTOM_LEFT;
-			else if (i == EDGE_HEIGHT && j == EDGE_WIDTH) cout << BOTTOM_RIGHT;
-			else if (i == 1 || i == EDGE_HEIGHT) cout << HORIZONTAL;
-			else if (j == 1 || j == EDGE_WIDTH) cout << VERTICAL;
+			else if (i == 1 && j == width) cout << TOP_RIGHT;
+			else if (i == height && j == 1) cout << BOTTOM_LEFT;
+			else if (i == height && j == width) cout << BOTTOM_RIGHT;
+			else if (i == 1 || i == height) cout << HORIZONTAL;
+			else if (j == 1 || j == width) cout << VERTICAL;
 			else cout << " ";
 		}
 		cout << endl;
@@ -53,7 +56,7 @@ void print_textbox(pair<int, int> lu, string msg)
 	const int edge_w = msg.length() + 3;
 
 	for (int i = 1; i <= edge_h; i++) {
-		gotoxy(lu.first, lu.second + i);
+		gotoxy(lu.first, lu.second + i - 2);
 		for (int j = 1; j <= edge_w; j++) {
 			if (i == 1 && j == 1) cout << TOP_LEFT;
 			else if (i == 1 && j == edge_w) cout << TOP_RIGHT;
@@ -65,7 +68,7 @@ void print_textbox(pair<int, int> lu, string msg)
 		}
 	}
 
-	gotoxy(lu.first + 2, lu.second + 2);
+	gotoxy(lu.first + 2, lu.second);
 	cout << msg;
 }
 
@@ -74,7 +77,19 @@ void print_main_menu()
 	for (int i = 0; i < 3; i++) {
 		print_textbox(menu_coord[i], main_menu_sel[i]);
 	}
-	cursor(menu_coord, main_menu_sel);
+	int res = cursor(menu_coord, main_menu_sel);
+
+	switch (res) {
+	case 0:
+		print_user_sel();
+		break;
+	case 1:
+		print_user_create();
+		break;
+	case 2:
+		print_user_del();
+		break;
+	}
 }
 
 int cursor(vector<pair<int, int>> sels, vector<string> msgs)
@@ -82,13 +97,16 @@ int cursor(vector<pair<int, int>> sels, vector<string> msgs)
 	int i = 0;
 	KEY key;
 	while (1) {
-		pair<int, int> t = make_pair(menu_coord[i].first - 2, menu_coord[i].second + 2);
+		pair<int, int> t = make_pair(sels[i].first - 2, sels[i].second);
 		gotoxy(t);
 
-		cout << "¢º";
+		cout << "> ";
 
 		key = get_key();
-		if (key == KEY::ESC) exit(1);
+		if (key == KEY::ESC) {
+			gotoxy(0, 32);
+			exit(1);
+		}
 		else if (key == KEY::ENTER) return i;
 		
 		switch(key) {
@@ -96,17 +114,89 @@ int cursor(vector<pair<int, int>> sels, vector<string> msgs)
 			gotoxy(t);
 			cout << " ";
 			i -= 1;
-			if (i < 0) i = 2;
+			if (i < 0) i = sels.size() - 1;
 			break;
 		case KEY::DOWN:
 			gotoxy(t);
 			cout << " ";
-			i = (i + 1) % 3;
+			i = (i + 1) % sels.size();
 			break;
 		}
 	}
 
 	return -1;
+}
+
+vector<string> name_to_vector(vector<Information> infos)
+{
+	vector<string> names;
+	for (Information info : infos) {
+		names.push_back(info.get_name());
+	}
+
+	return names;
+}
+
+void print_user_sel() 
+{
+	system("cls");
+
+	int i = 0;
+	vector<Information> infos;
+	infos = get_information();
+
+	print_edge(infos.size() * 2 + 4);
+
+	vector<string> names;
+	vector<pair<int, int>> coords;
+
+	for (Information info : infos) {
+		gotoxy(5, (++i) * 2);
+		coords.push_back(make_pair(4, i * 2));
+		cout << info.get_name() << endl;
+	}
+
+	cursor(coords, names);
+}
+
+void print_user_create()
+{
+	system("cls");
+	print_edge();
+
+	Information info;
+	info.input_information();
+
+	vector<Information> infos;
+	infos = get_information();
+	infos = info.save_information(infos);
+
+	save_to_txt(infos);
+}
+
+void print_user_del()
+{
+	system("cls");
+
+	int i = 0;
+	vector<Information> infos;
+	infos = get_information();
+
+	print_edge(infos.size() * 2 + 4);
+
+	vector<string> names;
+	vector<pair<int, int>> coords;
+
+	for (Information info : infos) {
+		gotoxy(5, (++i) * 2);
+		coords.push_back(make_pair(4, i * 2));
+		cout << info.get_name() << endl;
+	}
+
+	int index = cursor(coords, names);
+	infos.erase(infos.begin() + index);
+
+	save_to_txt(infos);
 }
 
 KEY get_key()
@@ -126,6 +216,9 @@ KEY get_key()
 	case 27:
 		return KEY::ESC;
 	}
+<<<<<<< HEAD
+=======
 
 	return KEY::NONE;
+>>>>>>> 1bd59d1e1cd265e90410edaec58524c1a98a4e4a
 }

@@ -4,6 +4,10 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include "Calo_UI.h"
 
 using namespace std;
 
@@ -12,7 +16,7 @@ class Information //Contains Name, Gender, Age, Height, Weight
 public:
 	Information(string name = " ", bool gender = true, int age = 20, int height = 170, int weight = 70);
 
-	void save_information(vector<Information> info); //Save Information to txt File
+	vector<Information> save_information(vector<Information> info); //Save Information to txt File
 	void input_information();				//Input Information from User, using Console
 	void set_information(string name, bool gender, int age, int height, int weight); //Save Information to this class
 
@@ -31,7 +35,7 @@ public:
 	int get_weight() { return weight; }
 
 	string convert_string() {
-		return name + (gender ? "1 " : "0 ") + to_string(age) + " " + to_string(height) + " " + to_string(weight) + "\n";
+		return name + " " + (gender ? "1 " : "0 ") + to_string(age) + " " + to_string(height) + " " + to_string(weight) + "\n";
 	}
 
 	bool operator==(Information cmp) {
@@ -55,7 +59,10 @@ static Information sep_space(string s)
 	for (int i = 0; i < s.length(); i++) {
 		t += s[i];
 		if (s[i] == ' ') {
-			if (order == 0) info.set_name(t);
+			if (order == 0) {
+				t.erase(find(t.begin(), t.end(), ' '));
+				info.set_name(t);
+			}
 			else if (order == 1) info.set_gender((bool)(stoi(t)));
 			else if (order == 2) info.set_age(stoi(t));
 			else if (order == 3) info.set_height(stoi(t));
