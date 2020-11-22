@@ -1,9 +1,8 @@
-//#include "Graph.h"
-//#include "Simple_window.h"
+#include "drawing_graph.h"
 #include "food_information.h"
 #include "Information.h"
 #include "Calo_UI.h"
-#include "food_information.h"
+#include "drawing_graph.h"
 #include <iostream>
 #include <vector>
 
@@ -15,6 +14,14 @@ void print()
 }
 
 int main() {
-	print_main_menu();
+	system(" mode  con lines=50   cols=130 ");
+
+	init_calo_ui();
+
+	while (1) {
+		print_edge();
+
+		print_main_menu();
+	}
 	return 0;
 }

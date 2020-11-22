@@ -1,8 +1,11 @@
 #include "Calo_UI.h"
-#include <conio.h>
+#include "Information.h"
 
 vector<pair<int, int>> menu_coord;
 vector<string> main_menu_sel;
+vector<string> user_sel_sel;
+vector<string> user_del_sel;
+vector<string> user_create_sel;
 
 void gotoxy(int x, int y) {
 	COORD pos = { x, y };
@@ -16,11 +19,6 @@ void gotoxy(pair<int, int> coord)
 }
 
 void goto_origin() { gotoxy(0, 0); }
-
-void set_color(int color)
-{
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
-}
 
 void init_calo_ui()
 {
@@ -58,7 +56,7 @@ void print_textbox(pair<int, int> lu, string msg)
 	const int edge_w = msg.length() + 3;
 
 	for (int i = 1; i <= edge_h; i++) {
-		gotoxy(lu.first, lu.second + i);
+		gotoxy(lu.first, lu.second + i - 2);
 		for (int j = 1; j <= edge_w; j++) {
 			if (i == 1 && j == 1) cout << TOP_LEFT;
 			else if (i == 1 && j == edge_w) cout << TOP_RIGHT;
@@ -70,7 +68,7 @@ void print_textbox(pair<int, int> lu, string msg)
 		}
 	}
 
-	gotoxy(lu.first + 2, lu.second + 2);
+	gotoxy(lu.first + 2, lu.second);
 	cout << msg;
 }
 
@@ -79,16 +77,124 @@ void print_main_menu()
 	for (int i = 0; i < 3; i++) {
 		print_textbox(menu_coord[i], main_menu_sel[i]);
 	}
-	cursor(menu_coord, main_menu_sel);
+	int res = cursor(menu_coord, main_menu_sel);
+
+	switch (res) {
+	case 0:
+		print_user_sel();
+		break;
+	case 1:
+		print_user_create();
+		break;
+	case 2:
+		print_user_del();
+		break;
+	}
 }
 
-void cursor(vector<pair<int, int>> sels, vector<string> msgs)
+int cursor(vector<pair<int, int>> sels, vector<string> msgs)
 {
+	int i = 0;
+	KEY key;
 	while (1) {
-		gotoxy(0, 32);
-		char t = _getch();
-		if (t == 27) break; //ESC
+		pair<int, int> t = make_pair(sels[i].first - 2, sels[i].second);
+		gotoxy(t);
+
+		cout << "¢º";
+
+		key = get_key();
+		if (key == KEY::ESC) {
+			gotoxy(0, 32);
+			exit(1);
+		}
+		else if (key == KEY::ENTER) return i;
+		
+		switch(key) {
+		case KEY::UP:
+			gotoxy(t);
+			cout << " ";
+			i -= 1;
+			if (i < 0) i = sels.size() - 1;
+			break;
+		case KEY::DOWN:
+			gotoxy(t);
+			cout << " ";
+			i = (i + 1) % sels.size();
+			break;
+		}
 	}
+
+	return -1;
+}
+
+vector<string> name_to_vector(vector<Information> infos)
+{
+	vector<string> names;
+	for (Information info : infos) {
+		names.push_back(info.get_name());
+	}
+
+	return names;
+}
+
+void print_user_sel() 
+{
+	system("cls");
+	print_edge();
+
+	int i = 0;
+	vector<Information> infos;
+	infos = get_information();
+
+	vector<string> names;
+	vector<pair<int, int>> coords;
+
+	for (Information info : infos) {
+		gotoxy(5, (++i) * 2);
+		coords.push_back(make_pair(4, i * 2));
+		cout << info.get_name() << endl;
+	}
+
+	cursor(coords, names);
+}
+
+void print_user_create()
+{
+	system("cls");
+	print_edge();
+
+	Information info;
+	info.input_information();
+
+	vector<Information> infos;
+	infos = get_information();
+	infos = info.save_information(infos);
+
+	save_to_txt(infos);
+}
+
+void print_user_del()
+{
+	system("cls");
+	print_edge();
+
+	int i = 0;
+	vector<Information> infos;
+	infos = get_information();
+
+	vector<string> names;
+	vector<pair<int, int>> coords;
+
+	for (Information info : infos) {
+		gotoxy(5, (++i) * 2);
+		coords.push_back(make_pair(4, i * 2));
+		cout << info.get_name() << endl;
+	}
+
+	int index = cursor(coords, names);
+	infos.erase(infos.begin() + index);
+
+	save_to_txt(infos);
 }
 
 KEY get_key()
