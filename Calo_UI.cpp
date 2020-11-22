@@ -31,19 +31,19 @@ void init_calo_ui()
 	main_menu_sel.push_back("3. Delete User");
 }
 
-void print_edge()
+void print_edge(int height, int width)
 {
 	system("cls");
 
 	goto_origin();
-	for (int i = 1; i <= EDGE_HEIGHT; i++) {
-		for (int j = 1; j <= EDGE_WIDTH; j++) {
+	for (int i = 1; i <= height; i++) {
+		for (int j = 1; j <= width; j++) {
 			if (i == 1 && j == 1) cout << TOP_LEFT;
-			else if (i == 1 && j == EDGE_WIDTH) cout << TOP_RIGHT;
-			else if (i == EDGE_HEIGHT && j == 1) cout << BOTTOM_LEFT;
-			else if (i == EDGE_HEIGHT && j == EDGE_WIDTH) cout << BOTTOM_RIGHT;
-			else if (i == 1 || i == EDGE_HEIGHT) cout << HORIZONTAL;
-			else if (j == 1 || j == EDGE_WIDTH) cout << VERTICAL;
+			else if (i == 1 && j == width) cout << TOP_RIGHT;
+			else if (i == height && j == 1) cout << BOTTOM_LEFT;
+			else if (i == height && j == width) cout << BOTTOM_RIGHT;
+			else if (i == 1 || i == height) cout << HORIZONTAL;
+			else if (j == 1 || j == width) cout << VERTICAL;
 			else cout << " ";
 		}
 		cout << endl;
@@ -100,7 +100,7 @@ int cursor(vector<pair<int, int>> sels, vector<string> msgs)
 		pair<int, int> t = make_pair(sels[i].first - 2, sels[i].second);
 		gotoxy(t);
 
-		cout << "¢º";
+		cout << "> ";
 
 		key = get_key();
 		if (key == KEY::ESC) {
@@ -140,11 +140,12 @@ vector<string> name_to_vector(vector<Information> infos)
 void print_user_sel() 
 {
 	system("cls");
-	print_edge();
 
 	int i = 0;
 	vector<Information> infos;
 	infos = get_information();
+
+	print_edge(infos.size() * 2 + 4);
 
 	vector<string> names;
 	vector<pair<int, int>> coords;
@@ -176,11 +177,12 @@ void print_user_create()
 void print_user_del()
 {
 	system("cls");
-	print_edge();
 
 	int i = 0;
 	vector<Information> infos;
 	infos = get_information();
+
+	print_edge(infos.size() * 2 + 4);
 
 	vector<string> names;
 	vector<pair<int, int>> coords;

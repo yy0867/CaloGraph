@@ -1,7 +1,12 @@
 #pragma once
+#include "food_information.h"
 #include <string>
 #include <vector>
 using namespace std;
+
+// 프로그램 시작하면, foodlist.txt 파일 읽어서
+// 음식 정보를 담은 vector 생성
+// void loadFoodList(vector<Food>& foodList);
 
 // 날짜 별 섭취한 영양분 양
 // 사용자로부터 날짜, 먹은 음식 입력 받으면 food_info.txt에서
@@ -34,7 +39,7 @@ private:
 class Dates_Nutritions
 {
 public:
-//	Dates_Nutritions();
+	Dates_Nutritions();
 	void addData(string date, double carbo, double protein,
 		double fat, double calorie);
 
