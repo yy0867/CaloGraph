@@ -2,10 +2,12 @@
 #include "Information.h"
 
 vector<pair<int, int>> menu_coord;
+vector<pair<int, int>> user_choice_coord;
 vector<string> main_menu_sel;
 vector<string> user_sel_sel;
 vector<string> user_del_sel;
 vector<string> user_create_sel;
+vector<string> user_sel_choice;
 
 void gotoxy(int x, int y) {
 	COORD pos = { x, y };
@@ -29,6 +31,12 @@ void init_calo_ui()
 	main_menu_sel.push_back("1. Select User");
 	main_menu_sel.push_back("2. Create User");
 	main_menu_sel.push_back("3. Delete User");
+
+	user_choice_coord.push_back(make_pair(5, 3));
+	user_choice_coord.push_back(make_pair(5, 7));
+
+	user_sel_choice.push_back("1. Analyze");
+	user_sel_choice.push_back("2. Add Information");
 }
 
 void print_edge(int height, int width)
@@ -48,6 +56,8 @@ void print_edge(int height, int width)
 		}
 		cout << endl;
 	}
+
+	cout << endl << "Press ESC to previous menu / EXIT";
 }
 
 void print_textbox(pair<int, int> lu, string msg)
@@ -162,7 +172,10 @@ void print_user_sel()
 		cout << info.get_name() << endl;
 	}
 
-	cursor(coords, names);
+	int res;
+	if ((res = cursor(coords, names)) == -1) return;
+	
+
 }
 
 void print_user_create()

@@ -31,19 +31,19 @@ int main()
 		cout << foodList[i].getCalorie() << endl;
 	}*/
 
-	/*system(" mode  con lines=50   cols=130 ");
+	system(" mode  con lines=50   cols=130 ");
 	init_calo_ui();
 	while (1) {
 		print_edge();
 		print_main_menu();
-	}*/
+	}
 
-	Foods_info xaeha;
+	/*Foods_info xaeha;
 
 	Food new_food(L"ÀÌÀçÇÏ", 100, 100, 100, 100);
 	xaeha.add_food(new_food);
 
-	xaeha.print_foods_info();
+	xaeha.print_foods_info();*/
 
 	return 0;
 }
