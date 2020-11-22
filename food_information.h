@@ -33,7 +33,8 @@ private:
 };
 
 //음식 탐색, 목록 추가, 목록에서 제거 필요
-class Food {
+class Food
+{
 public:
 	Food(wstring name, int carbo, int protein,
 		int fat, int calorie);
@@ -51,13 +52,14 @@ private:
 	Nutrition nutrition;
 };
 
-class Foods_info {
+class Foods_info
+{
 public:
-	Foods_info();
+	Foods_info();			// 생성자에서 read_from_file() 호출
 	void add_food(Food source);
 	void print_foods_info();
 
-	void read_from_file();
+	void read_from_file();	// foodlist.txt 파일 읽어서 벡터에 저장
 
 	size_t getSize() const { return foods.size(); }
 

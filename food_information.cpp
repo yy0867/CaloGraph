@@ -102,24 +102,18 @@ void Foods_info::read_from_file()
 	foodFile.close();
 }
 
-void Foods_info::add_food(Foods source)
-{
-	foods.push_back(source);
-
-	fstream ofs("food_info.txt", fstream::out | fstream::app);
-	if (ofs.is_open())
-	{
-		ofs << "\n"+source.get_one_info();
-	}
-	else cout << "file doesn't exist";
-
-	ofs.close();
-}
-
-<<<<<<< HEAD
 void Foods_info::add_food(Food source)
 {
 	foods.push_back(source);
+
+	wofstream foodFile("foodlist.txt", ofstream::out | ofstream::app);
+	if (!foodFile.is_open()) {
+		perror("foodlist.txt open() error!");
+		exit(-1);
+	}
+	foodFile << "\n" << source.get_one_info();
+
+	foodFile.close();
 }
 
 void Foods_info::print_foods_info()
@@ -127,12 +121,3 @@ void Foods_info::print_foods_info()
 	for (int i = 0; i < foods.size(); ++i)
 		wcout << foods[i].get_one_info() << endl;
 }
-=======
-void Foods_info::print_foods_info()
-{
-	for (int i = 0; i < foods.size(); ++i)
-	{
-		cout << foods[i].get_one_info() << endl;
-	}
-}
->>>>>>> main

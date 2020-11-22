@@ -1,12 +1,8 @@
 #include "drawing_graph.h"
 #include "food_information.h"
 #include "Information.h"
-<<<<<<< HEAD
-#include "DatePerNutrition.h"
-=======
 #include "Calo_UI.h"
 #include "drawing_graph.h"
->>>>>>> main
 #include <iostream>
 #include <vector>
 
@@ -17,7 +13,6 @@ void print()
 	cout << "now print graph" << endl;
 }
 
-<<<<<<< HEAD
 int main()
 {
 	/*wcout.imbue(locale("ko_KR.UTF-8"));
@@ -36,25 +31,22 @@ int main()
 		cout << foodList[i].getCalorie() << endl;
 	}*/
 
+	//system(" mode  con lines=50   cols=130 ");
+
+	//init_calo_ui();
+
+	//while (1) {
+	//	print_edge();
+
+	//	print_main_menu();
+	//}
+
 	Foods_info xaeha;
+
+	Food new_food(L"ÀÌÀçÇÏ", 100, 100, 100, 100);
+	xaeha.add_food(new_food);
+
 	xaeha.print_foods_info();
-	/*
-=======
-int main() {
->>>>>>> main
-	system(" mode  con lines=50   cols=130 ");
 
-	init_calo_ui();
-
-	while (1) {
-		print_edge();
-
-		print_main_menu();
-	}
-<<<<<<< HEAD
-	*/
-
-=======
->>>>>>> main
 	return 0;
 }
