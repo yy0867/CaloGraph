@@ -1,6 +1,5 @@
 #include "Calo_UI.h"
 #include "Information.h"
-#include <conio.h>
 
 vector<pair<int, int>> menu_coord;
 vector<string> main_menu_sel;
@@ -101,7 +100,7 @@ int cursor(vector<pair<int, int>> sels, vector<string> msgs)
 		pair<int, int> t = make_pair(sels[i].first - 2, sels[i].second);
 		gotoxy(t);
 
-		cout << "¢º";
+		cout << "Â¢Âº";
 
 		key = get_key();
 		if (key == KEY::ESC) {
@@ -157,8 +156,6 @@ void print_user_sel()
 	}
 
 	cursor(coords, names);
-
-	cout << "sel";
 }
 
 void print_user_create()
@@ -166,8 +163,14 @@ void print_user_create()
 	system("cls");
 	print_edge();
 
-	gotoxy(10, 10);
-	cout << "create";
+	Information info;
+	info.input_information();
+
+	vector<Information> infos;
+	infos = get_information();
+	infos = info.save_information(infos);
+
+	save_to_txt(infos);
 }
 
 void print_user_del()
@@ -175,8 +178,23 @@ void print_user_del()
 	system("cls");
 	print_edge();
 
-	gotoxy(10, 10);
-	cout << "del";
+	int i = 0;
+	vector<Information> infos;
+	infos = get_information();
+
+	vector<string> names;
+	vector<pair<int, int>> coords;
+
+	for (Information info : infos) {
+		gotoxy(5, (++i) * 2);
+		coords.push_back(make_pair(4, i * 2));
+		cout << info.get_name() << endl;
+	}
+
+	int index = cursor(coords, names);
+	infos.erase(infos.begin() + index);
+
+	save_to_txt(infos);
 }
 
 KEY get_key()
