@@ -1,15 +1,35 @@
 #include "food_information.h"
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
+#include <locale>
 using namespace std;
 
-Foods::Foods(string one_line)
+Nutrition::Nutrition()
+	: carbo(0), protein(0), fat(0), calorie(0) {}
+
+Nutrition::Nutrition(int carbo, int protein,
+	int fat, int calorie)
+	: carbo(carbo), protein(protein), fat(fat), calorie(calorie) {}
+
+Food::Food(wstring name, int carbo, int protein,
+	int fat, int calorie)
+	: food_name(name)
 {
-	string info[5];
+	nutrition.setCarbo(carbo);
+	nutrition.setProtein(protein);
+	nutrition.setFat(fat);
+	nutrition.setCalorie(calorie);
+}
+
+Food::Food(wstring one_line)
+{
+	wstring info[5];
 	int count = 0;
 	for (int i = 0; i < one_line.size(); ++i)
 	{
-		if (one_line[i] == ' ')count++;
+		if (one_line[i] == ' ')
+			count++;
 
 		switch (count)
 		{
@@ -22,15 +42,15 @@ Foods::Foods(string one_line)
 	}
 
 	food_name = info[0];
-	carbo = stod(info[1]);
-	protein = stod(info[2]);
-	fat = stod(info[3]);
-	calorie = stod(info[4]);
+	nutrition.setCarbo(stoi(info[1]));
+	nutrition.setProtein(stoi(info[2]));
+	nutrition.setFat(stoi(info[3]));
+	nutrition.setCalorie(stoi(info[4]));
 }
 
-string cut_double(string s)
+wstring cut_int(wstring s)
 {
-	string out = "";
+	wstring out = L"";
 	for (int i = 0; i < s.length(); i++) {
 		out += s[i];
 		if (s[i] == '.') {
@@ -42,14 +62,13 @@ string cut_double(string s)
 	return out;
 }
 
-string Foods::get_one_info()
+wstring Food::get_one_info()
 {
-	string line = food_name;
-	line += " " + cut_double(to_string(carbo));
-	line += " " + cut_double(to_string(protein));
-	line += " " + cut_double(to_string(fat));
-	line += " " + cut_double(to_string(calorie));
-
+	wstring line = food_name;
+	line += L" " + to_wstring(nutrition.getCarbo());
+	line += L" " + to_wstring(nutrition.getProtein());
+	line += L" " + to_wstring(nutrition.getFat());
+	line += L" " + to_wstring(nutrition.getCalorie());
 	return line;
 }
 
@@ -60,43 +79,45 @@ Foods_info::Foods_info()
 
 void Foods_info::read_from_file()
 {
-	ifstream ifs("food_info.txt");
-	string temp;
-	if (ifs.is_open())
-	{
-		while (!ifs.eof())
-		{
-			char buf[256];
-			ifs.getline(buf, 256);
+	wcout.imbue(locale("ko_KR.UTF-8"));
+	wcin.imbue(locale("ko_KR.UTF-8"));
+	locale::global(locale("ko_KR.UTF-8"));
 
-			temp = buf;
-			Foods fds(temp);
-			foods.push_back(fds);
-		}
+	wifstream foodFile("foodlist.txt");
+	if (!foodFile.is_open()) {
+		perror("foodlist.txt open() error!");
+		exit(-1);
 	}
-	else cout << "file doesn't exist";
 
-	ifs.close();
+	wstring food_name;
+	int carbo, protein, fat, calorie;
+	while (!foodFile.eof()) {
+		foodFile >> food_name;
+		foodFile >> carbo >> protein >> fat >> calorie;
+
+		Food f(food_name, carbo, protein, fat, calorie);
+		foods.push_back(f);
+	}
+
+	foodFile.close();
 }
 
-void Foods_info::add_food(Foods source)
+void Foods_info::add_food(Food source)
 {
 	foods.push_back(source);
 
-	fstream ofs("food_info.txt", fstream::out | fstream::app);
-	if (ofs.is_open())
-	{
-		ofs << "\n"+source.get_one_info();
+	wofstream foodFile("foodlist.txt", ofstream::out | ofstream::app);
+	if (!foodFile.is_open()) {
+		perror("foodlist.txt open() error!");
+		exit(-1);
 	}
-	else cout << "file doesn't exist";
+	foodFile << "\n" << source.get_one_info();
 
-	ofs.close();
+	foodFile.close();
 }
 
 void Foods_info::print_foods_info()
 {
 	for (int i = 0; i < foods.size(); ++i)
-	{
-		cout << foods[i].get_one_info() << endl;
-	}
+		wcout << foods[i].get_one_info() << endl;
 }

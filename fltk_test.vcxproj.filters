@@ -42,11 +42,7 @@
     <ClCompile Include="DatePerNutrition.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="drawing_graph.cpp">
-=======
-    <ClCompile Include="compare_data.cpp">
->>>>>>> 40ef86cfb155c690beceb7e17a00ecc26bd91dd1
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -96,11 +92,7 @@
     <ClInclude Include="DatePerNutrition.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="drawing_graph.h">
-=======
-    <ClInclude Include="compare_data.h">
->>>>>>> 40ef86cfb155c690beceb7e17a00ecc26bd91dd1
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

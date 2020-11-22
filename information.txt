@@ -1,8 +1,5 @@
-abc 1 54 75 23
-def 1 5 4 3
-ghi 0 4 2 3
-klm 1 6 2 3
-nop 0 5 6 3
-qrs 1 4 9 34
-tuv 1 2 2 2
-wxy 1 23 180 75
+teonPark 1 24 160 234
+syKim 1 23 170 73
+jaehaWilly 1 23 160 60
+chanLim 1 23 172 56
+silverStar 0 23 169 74
