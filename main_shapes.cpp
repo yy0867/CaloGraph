@@ -15,31 +15,6 @@ void print()
 }
 
 int main() {
-	Foods_info finfo;
-
-	finfo.print_foods_info();
-	
-	/*
-	system(" mode  con lines=50   cols=130 ");
-
-	init_calo_ui();
-
-	while (1) {
-		print_edge();
-<<<<<<< HEAD
-		
-		t = _getch();
-<<<<<<< HEAD
-		if (t == 27) break;
-	}
-	*/
-=======
-		if (t == 27) break; //ESC
-
-=======
->>>>>>> origin/main
-		print_main_menu();
-	}
->>>>>>> origin/main
+	print_main_menu();
 	return 0;
 }
