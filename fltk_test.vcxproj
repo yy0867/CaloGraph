@@ -142,6 +142,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Calo_UI.cpp" />
+    <ClCompile Include="compare_data.cpp" />
     <ClCompile Include="DatePerNutrition.cpp" />
     <ClCompile Include="drawing_graph.cpp" />
     <ClCompile Include="food_information.cpp" />

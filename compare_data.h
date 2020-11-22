@@ -1,18 +1,13 @@
 #pragma once
-#include <string>
-#include <vector>
+#include "drawing_graph.h"
 using namespace std;
 
-class dates {
-public:
-	/*dates(string date, double carbo, double protein, double fat, double calorie);*/
-	dates();
-	//void OpenFile(string username, vector<dates>& value);
-	void OpenFile(string username);
-private:
-	string date;
-	double carbo;
-	double protein;
-	double fat;
-	double calorie;
-};
+string compare_carbo(string username, int gender);
+string compare_protein(string username, int gender);
+string compare_fat(string username, int gender);
+string compare_calorie(string username, int gender);
+
+string compare_recent_carbo(string username, int gender);
+string compare_recent_protein(string username, int gender);
+string compare_recent_fat(string username, int gender);
+string compare_recent_calorie(string username, int gender);

@@ -216,9 +216,5 @@ KEY get_key()
 	case 27:
 		return KEY::ESC;
 	}
-<<<<<<< HEAD
-=======
-
 	return KEY::NONE;
->>>>>>> 1bd59d1e1cd265e90410edaec58524c1a98a4e4a
 }

@@ -15,12 +15,11 @@ void print()
 }
 
 int main() {
-	Foods_info xaeha;
+	/*Foods_info xaeha;
 
-	Food new_food(L"이재하", 100, 100, 100, 100);
+	Food new_food("이재하", 100, 100, 100, 100);
 	xaeha.add_food(new_food);
 
-	xaeha.print_foods_info();
-
+	xaeha.print_foods_info();*/
 	return 0;
 }
