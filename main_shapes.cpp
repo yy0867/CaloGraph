@@ -17,7 +17,7 @@ int main() {
 	system(" mode  con lines=50   cols=130 ");
 
 	init_calo_ui();
-
+	
 	while (1) {
 		print_edge();
 
