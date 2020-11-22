@@ -80,6 +80,12 @@ void print_main_menu()
 	int res = cursor(menu_coord, main_menu_sel);
 
 	switch (res) {
+	case -1:
+		system("cls");
+		print_edge();
+		gotoxy(3, 5);
+		cout << "Exit Program!";
+		exit(1);
 	case 0:
 		print_user_sel();
 		break;
@@ -105,7 +111,7 @@ int cursor(vector<pair<int, int>> sels, vector<string> msgs)
 		key = get_key();
 		if (key == KEY::ESC) {
 			gotoxy(0, 32);
-			exit(1);
+			return -1;
 		}
 		else if (key == KEY::ENTER) return i;
 		
