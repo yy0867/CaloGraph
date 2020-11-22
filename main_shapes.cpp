@@ -15,11 +15,11 @@ void print()
 }
 
 int main() {
-	/*Foods_info xaeha;
+	Foods_info xaeha;
 
 	Food new_food("¿Ã¿Á«œ", 100, 100, 100, 100);
 	xaeha.add_food(new_food);
 
-	xaeha.print_foods_info();*/
+	xaeha.print_foods_info();
 	return 0;
 }
