@@ -27,15 +27,15 @@ void Information::input_information()
 
 	gotoxy(3, y);
 	y += 3;
-	cout << "ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä. >> ";
+	cout << "ì´ë¦„ì„ ìž…ë ¥í•˜ì„¸ìš”. >> ";
 	cin >> name;
 
 	gotoxy(3, y);
 	y += 1;
-	cout << "¼ºº°À» °ñ¶óÁÖ¼¼¿ä.";
+	cout << "ì„±ë³„ì„ ê³¨ë¼ì£¼ì„¸ìš”.";
 	gotoxy(3, y);
 	y += 3;
-	cout << "1. ³²ÀÚ    2. ¿©ÀÚ >> ";
+	cout << "1. ë‚¨ìž    2. ì—¬ìž >> ";
 	
 	while (1) {
 		cin >> gender_input;
@@ -49,28 +49,28 @@ void Information::input_information()
 		}
 		gotoxy(3, y);
 		y += 3;
-		cout << "1°ú 2Áß ¼±ÅÃÇØÁÖ¼¼¿ä. \n1. ³²ÀÚ    2. ¿©ÀÚ >> ";
+		cout << "1ê³¼ 2ì¤‘ ì„ íƒí•´ì£¼ì„¸ìš”. >> ";
 	}
 
 	gotoxy(3, y);
 	y += 3;
-	cout << "³ªÀÌ°¡ ¾î¶»°Ô µÇ½Ã³ª¿ä? (0 ~ 99¼¼) >> ";
+	cout << "ë‚˜ì´ê°€ ì–´ë–»ê²Œ ë˜ì‹œë‚˜ìš”? (0 ~ 99ì„¸) >> ";
 	
 	while (1) {
 		cin >> age;
 		if (0 < age && age < 100) break;
 		gotoxy(3, y);
 		y += 3;
-		cout << "0¼¼ºÎÅÍ 99¼¼±îÁö ÀÔ·ÂÇÒ ¼ö ÀÖ½À´Ï´Ù. >> ";
+		cout << "0ì„¸ë¶€í„° 99ì„¸ê¹Œì§€ ìž…ë ¥í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. >> ";
 	}
 
 	gotoxy(3, y);
-	cout << "Å°¿Í ¸ö¹«°Ô¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä. " << endl;
+	cout << "í‚¤ì™€ ëª¸ë¬´ê²Œë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”. " << endl;
 	gotoxy(3, y + 1);
-	cout << "Å° >> ";
+	cout << "í‚¤ >> ";
 	cin >> height;
 	gotoxy(3, y + 2);
-	cout << "¸ö¹«°Ô >> ";
+	cout << "ëª¸ë¬´ê²Œ >> ";
 	cin >> weight;
 
 	this->set_information(name, gender, age, height, weight);

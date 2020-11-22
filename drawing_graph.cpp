@@ -273,3 +273,8 @@ void Person_info::print_person_info()
 		cout << person[i].get_one_info() << endl;
 	}
 }
+
+void Drawing::setWindow(Point tl, int width, int height, string name)
+{
+	win = new Simple_window(tl, width, height, name);
+}

@@ -100,7 +100,7 @@ int cursor(vector<pair<int, int>> sels, vector<string> msgs)
 		pair<int, int> t = make_pair(sels[i].first - 2, sels[i].second);
 		gotoxy(t);
 
-		cout << "¢º";
+		cout << "Â¢Âº";
 
 		key = get_key();
 		if (key == KEY::ESC) {
