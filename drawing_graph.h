@@ -59,12 +59,11 @@ private:
 
 class Drawing {
 public:
+	Drawing() {}
 	Drawing(Point tl,int width,int height,string name);
-	~Drawing();
-
+	
 	void setWindow(Point tl, int width, int height, string name);
 
-	void attachAxis(int x, int y,string kind,int numOfDate,vector<string> dates);	//x,y를 원점으로 하는 축 생성
 	void drawPersonInfo(Drawing draw,Person_info pinfo,int gender);	//drawing객체, 일별 영양소 파일, 성별 입력
 
 	Simple_window* winp() { return win; };
