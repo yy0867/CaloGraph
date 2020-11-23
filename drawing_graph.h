@@ -10,12 +10,12 @@
 #define UP_GRAPH_YPOS 400
 #define RIGHT_GRAPH_XPOS 600
 #define DOWN_GRAPH_YPOS 700
-#define MAN 0 
+#define MAN 1
 #define MAN_AVERAGE_CAR 250	//all units : "grams"
 #define MAN_AVERAGE_PRO 60
 #define MAN_AVERAGE_FAT 60
 #define MAN_AVERAGE_CAL 2200
-#define WOMAN 1
+#define WOMAN 0
 #define WOMAN_AVERAGE_CAR 200
 #define WOMAN_AVERAGE_PRO 50
 #define WOMAN_AVERAGE_FAT 50

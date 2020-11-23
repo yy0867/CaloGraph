@@ -4,3 +4,4 @@ jaehaWilly 1 23 160 60
 chanLim 1 23 172 56
 silverStar 0 23 169 74
 teshyung 1 67 180 75
+man 1 24 170 64

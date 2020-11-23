@@ -87,7 +87,7 @@ void print_main_menu()
 	for (int i = 0; i < 3; i++) {
 		print_textbox(menu_coord[i], main_menu_sel[i]);
 	}
-	int res = cursor(menu_coord, main_menu_sel);
+	int res = cursor(menu_coord);
 
 	switch (res) {
 	case -1:
@@ -108,7 +108,7 @@ void print_main_menu()
 	}
 }
 
-int cursor(vector<pair<int, int>> sels, vector<string> msgs)
+int cursor(vector<pair<int, int>> sels)
 {
 	int i = 0;
 	KEY key;
@@ -153,6 +153,30 @@ vector<string> name_to_vector(vector<Information> infos)
 	return names;
 }
 
+void print_user_choice(string person_name, bool gender)
+{
+	system("cls");
+	print_edge();
+
+	for (int i = 0; i < user_sel_choice.size(); i++) {
+		gotoxy(user_choice_coord[i].first, user_choice_coord[i].second);
+		cout << user_sel_choice[i];
+	}
+
+	int res;
+	if((res = cursor(user_choice_coord)) == -1) return;
+	else if (res == 0) {
+		Drawing draw(Point(150, 150), 1000, 800, "CaloGraph");
+		person_name += ".txt";
+
+		Person_info pinfo(person_name);
+		draw.drawPersonInfo(draw, pinfo, gender);
+	}
+	else if (res == 1) {
+		
+	}
+}
+
 void print_user_sel() 
 {
 	system("cls");
@@ -173,9 +197,9 @@ void print_user_sel()
 	}
 
 	int res;
-	if ((res = cursor(coords, names)) == -1) return;
+	if ((res = cursor(coords)) == -1) return;
 	
-
+	print_user_choice(infos[res].get_name(), infos[res].get_gender());
 }
 
 void print_user_create()
@@ -212,7 +236,7 @@ void print_user_del()
 		cout << info.get_name() << endl;
 	}
 
-	int index = cursor(coords, names);
+	int index = cursor(coords);
 	infos.erase(infos.begin() + index);
 
 	save_to_txt(infos);
