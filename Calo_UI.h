@@ -1,6 +1,7 @@
 #ifndef __CALO_UI_H__
 #define __CALO_UI_H__
 
+#include "drawing_graph.h"
 #include <Windows.h>
 #include <iostream>
 #include <string>
@@ -34,7 +35,8 @@ void goto_origin();
 void print_edge(int height = EDGE_HEIGHT, int width = EDGE_WIDTH);
 void print_main_menu();
 void print_textbox(pair<int, int> lu, string msg); //ru: right up, ld: left down
-int cursor(vector<pair<int, int>> sels, vector<string> msgs);
+int cursor(vector<pair<int, int>> sels);
+void print_user_choice(string person_name);
 void print_user_sel();
 void print_user_create();
 void print_user_del();

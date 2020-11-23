@@ -15,10 +15,12 @@ void print()
 
 int main()
 {
-	Drawing draw;
-	
-	draw.setWindow(Point(150, 150), 1000, 800, "calo");
-	Person_info pinfo("man.txt");
-	draw.drawPersonInfo(draw, pinfo, MAN);
+	system(" mode  con lines=50   cols=130 ");
+	init_calo_ui();
+	while (1) {
+		print_edge();
+		print_main_menu();
+	}
+
 	return 0;
 }

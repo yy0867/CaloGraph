@@ -27,15 +27,15 @@ void Information::input_information()
 
 	gotoxy(3, y);
 	y += 3;
-	cout << "이름을 입력하세요. >> ";
+	cout << "Input name >> ";
 	cin >> name;
 
 	gotoxy(3, y);
 	y += 1;
-	cout << "성별을 골라주세요.";
+	cout << "Select gender >> ";
 	gotoxy(3, y);
 	y += 3;
-	cout << "1. 남자    2. 여자 >> ";
+	cout << "1. male    2. female >> ";
 	
 	while (1) {
 		cin >> gender_input;
@@ -49,28 +49,28 @@ void Information::input_information()
 		}
 		gotoxy(3, y);
 		y += 3;
-		cout << "1과 2중 선택해주세요. >> ";
+		cout << "Please select 1 or 2 >> ";
 	}
 
 	gotoxy(3, y);
 	y += 3;
-	cout << "나이가 어떻게 되시나요? (0 ~ 99세) >> ";
+	cout << "How old are you? (0 ~ 99) >> ";
 	
 	while (1) {
 		cin >> age;
 		if (0 < age && age < 100) break;
 		gotoxy(3, y);
 		y += 3;
-		cout << "0세부터 99세까지 입력할 수 있습니다. >> ";
+		cout << "Age should be in the 0 ~ 99 >> ";
 	}
 
 	gotoxy(3, y);
-	cout << "키와 몸무게를 입력해주세요. " << endl;
+	cout << "Enter your height and weight >> " << endl;
 	gotoxy(3, y + 1);
-	cout << "키 >> ";
+	cout << "Height >> ";
 	cin >> height;
 	gotoxy(3, y + 2);
-	cout << "몸무게 >> ";
+	cout << "Weight >> ";
 	cin >> weight;
 
 	this->set_information(name, gender, age, height, weight);
