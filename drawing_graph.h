@@ -59,6 +59,7 @@ private:
 
 class Drawing {
 public:
+	Drawing() {}
 	Drawing(Point tl,int width,int height,string name);
 	~Drawing();
 
