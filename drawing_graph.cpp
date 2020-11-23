@@ -91,52 +91,56 @@ Drawing::Drawing(Point tl, int width, int height, string name)
 	win = new Simple_window(tl, width, height, name);
 }
 
-Drawing::~Drawing()
-{
-	delete win;
-}
-
-void Drawing::attachAxis(int x, int y,string kind,int numOfDate,vector<string> dates)
-{
-	Axis xa(Axis::x, Point(x, y), AXIS_WIDTH, numOfDate-1, "");
-	Axis ya(Axis::y, Point(x, y), AXIS_HEIGHT, 0, kind);
-	xa.set_color(Color::black);
-	ya.set_color(Color::black);
-	xa.draw();
-	ya.draw();
-	win->attach(xa);
-	win->attach(ya);
-
-	Vector_ref <Text> t;
-	int unit = (double)AXIS_WIDTH / (numOfDate-1);
-	for (int i = 0; i < numOfDate; ++i)
-	{
-		t.push_back(new Text(Point(x + i * unit, y+20), dates[i]));
-		t[i].set_color(Color::black);
-		t[i].draw();
-		win->attach(t[i]);
-	}
-	//win->wait_for_button();
-}
-
 void Drawing::drawPersonInfo(Drawing draw,Person_info pinfo,int gender)
 {
 	double extension;
 	double downize;
 	vector<string> dates;
+	Vector_ref<Line> lines1;	Vector_ref<Text> txts1;
+	Vector_ref<Line> lines2;	Vector_ref<Text> txts2;
+	Vector_ref<Line> lines3;	Vector_ref<Text> txts3;
+	Vector_ref<Line> lines4;	Vector_ref<Text> txts4;
+
 	for (int i = 0; i < pinfo.numOfDate(); ++i)
 		dates.push_back(pinfo.getOneDay(i).get_date());
 
 	Text title(Point(70, 70), "Information of "+pinfo.getName()); title.set_color(Color::black); 
 	title.set_font_size(50); title.draw(); win->attach(title);
+	//Axis
+	Vector_ref<Axis> axis;
+	axis.push_back(new Axis(Axis::x, Point(LEFT_GRAPH_XPOS, UP_GRAPH_YPOS), AXIS_WIDTH,pinfo.numOfDate()-1, ""));
+	axis.push_back(new Axis(Axis::y, Point(LEFT_GRAPH_XPOS,UP_GRAPH_YPOS), AXIS_HEIGHT, 0, "carbo"));
+	axis.push_back(new Axis(Axis::x, Point(RIGHT_GRAPH_XPOS, UP_GRAPH_YPOS), AXIS_WIDTH, pinfo.numOfDate() - 1, ""));
+	axis.push_back(new Axis(Axis::y, Point(RIGHT_GRAPH_XPOS, UP_GRAPH_YPOS), AXIS_HEIGHT, 0, "protein"));
+	axis.push_back(new Axis(Axis::x, Point(LEFT_GRAPH_XPOS, DOWN_GRAPH_YPOS), AXIS_WIDTH, pinfo.numOfDate() - 1, ""));
+	axis.push_back(new Axis(Axis::y, Point(LEFT_GRAPH_XPOS, DOWN_GRAPH_YPOS), AXIS_HEIGHT, 0, "fat"));
+	axis.push_back(new Axis(Axis::x, Point(RIGHT_GRAPH_XPOS, DOWN_GRAPH_YPOS), AXIS_WIDTH, pinfo.numOfDate() - 1, ""));
+	axis.push_back(new Axis(Axis::y, Point(RIGHT_GRAPH_XPOS, DOWN_GRAPH_YPOS), AXIS_HEIGHT, 0, "calorie"));
+	for (int i = 0; i < axis.size(); ++i)
+	{
+		axis[i].set_color(Color::black);
+		axis[i].draw();
+		win->attach(axis[i]);
+	}
 
-	draw.attachAxis(LEFT_GRAPH_XPOS, UP_GRAPH_YPOS, "carbo", pinfo.numOfDate(), dates);
-	draw.attachAxis(RIGHT_GRAPH_XPOS, UP_GRAPH_YPOS, "protein", pinfo.numOfDate(), dates);
-	draw.attachAxis(LEFT_GRAPH_XPOS, DOWN_GRAPH_YPOS, "fat", pinfo.numOfDate(), dates);
-	draw.attachAxis(RIGHT_GRAPH_XPOS, DOWN_GRAPH_YPOS, "calorie", pinfo.numOfDate(), dates);
+	Vector_ref <Text> t;
+	double unit = (double)AXIS_WIDTH / (pinfo.numOfDate() - 1);
+	for (int i = 0; i < pinfo.numOfDate(); ++i)
+	{
+		t.push_back(new Text(Point(LEFT_GRAPH_XPOS + i * unit, UP_GRAPH_YPOS + 20), dates[i]));
+		t.push_back(new Text(Point(RIGHT_GRAPH_XPOS + i * unit, UP_GRAPH_YPOS + 20), dates[i]));
+		t.push_back(new Text(Point(LEFT_GRAPH_XPOS + i * unit, DOWN_GRAPH_YPOS + 20), dates[i]));
+		t.push_back(new Text(Point(RIGHT_GRAPH_XPOS+ i * unit, DOWN_GRAPH_YPOS + 20), dates[i]));
+	}
+	for (int i = 0; i < t.size(); ++i)
+	{
+		t[i].set_color(Color::black);
+		t[i].draw();
+		win->attach(t[i]);
+	}
+	
 	double today, tomorrow;
-	double unit = (double)AXIS_WIDTH / (pinfo.numOfDate()-1);
-
+	
 	//average values
 	int c, p, f, cal;
 	switch (gender)
@@ -165,18 +169,18 @@ void Drawing::drawPersonInfo(Drawing draw,Person_info pinfo,int gender)
 		today = pinfo.getOneDay(i).get_carbo()*extension-downize;
 		tomorrow = pinfo.getOneDay(i + 1).get_carbo()*extension-downize;
 
-		Line line(Point(LEFT_GRAPH_XPOS + (unit * i), UP_GRAPH_YPOS - today), Point(LEFT_GRAPH_XPOS + (unit * (i + 1)), UP_GRAPH_YPOS - tomorrow));
-		line.set_color(Color::red);
-		line.draw();
-		win->attach(line);
+		lines1.push_back(new Line(Point(LEFT_GRAPH_XPOS + (unit * i), UP_GRAPH_YPOS - today), Point(LEFT_GRAPH_XPOS + (unit * (i + 1)), UP_GRAPH_YPOS - tomorrow)));
+		lines1[i].set_color(Color::red);
+		lines1[i].draw();
+		win->attach(lines1[i]);
 	}
 	for (int i = 0; i < pinfo.numOfDate(); ++i)
 	{
 		today = pinfo.getOneDay(i).get_carbo() * extension-downize;
-		Text txt(Point(LEFT_GRAPH_XPOS + (unit * i), UP_GRAPH_YPOS - today), to_string((int)pinfo.getOneDay(i).get_carbo()));
-		txt.set_color(Color::black);
-		txt.draw();
-		win->attach(txt);
+		txts1.push_back(new Text(Point(LEFT_GRAPH_XPOS + (unit * i), UP_GRAPH_YPOS - today), to_string((int)pinfo.getOneDay(i).get_carbo())));
+		txts1[i].set_color(Color::black);
+		txts1[i].draw();
+		win->attach(txts1[i]);
 	}
 	//protein
 	extension = 4; downize = 120;
@@ -191,19 +195,19 @@ void Drawing::drawPersonInfo(Drawing draw,Person_info pinfo,int gender)
 		today = pinfo.getOneDay(i).get_protein() * extension-downize;
 		tomorrow = pinfo.getOneDay(i + 1).get_protein() * extension-downize;
 
-		Line line(Point(RIGHT_GRAPH_XPOS + (unit * i), UP_GRAPH_YPOS - today), Point(RIGHT_GRAPH_XPOS + (unit * (i + 1)), UP_GRAPH_YPOS - tomorrow));
-		line.set_color(Color::red);
-		line.draw();
-		win->attach(line);
+		lines2.push_back(new Line(Point(RIGHT_GRAPH_XPOS + (unit * i), UP_GRAPH_YPOS - today), Point(RIGHT_GRAPH_XPOS + (unit * (i + 1)), UP_GRAPH_YPOS - tomorrow)));
+		lines2[i].set_color(Color::red);
+		lines2[i].draw();
+		win->attach(lines2[i]);
 	}
 	for (int i = 0; i < pinfo.numOfDate(); ++i)
 	{
 		today = pinfo.getOneDay(i).get_protein() * extension-downize;
 		
-		Text txt(Point(RIGHT_GRAPH_XPOS + (unit * i), UP_GRAPH_YPOS - today), to_string((int)pinfo.getOneDay(i).get_protein()));
-		txt.set_color(Color::black);
-		txt.draw();
-		win->attach(txt);
+		txts2.push_back(new Text(Point(RIGHT_GRAPH_XPOS + (unit * i), UP_GRAPH_YPOS - today), to_string((int)pinfo.getOneDay(i).get_protein())));
+		txts2[i].set_color(Color::black);
+		txts2[i].draw();
+		win->attach(txts2[i]);
 	}
 	//fat
 	//fat average line
@@ -217,19 +221,19 @@ void Drawing::drawPersonInfo(Drawing draw,Person_info pinfo,int gender)
 		today = pinfo.getOneDay(i).get_fat() * extension-downize;
 		tomorrow = pinfo.getOneDay(i + 1).get_fat() * extension-downize;
 
-		Line line(Point(LEFT_GRAPH_XPOS + (unit * i), DOWN_GRAPH_YPOS - today), Point(LEFT_GRAPH_XPOS + (unit * (i + 1)), DOWN_GRAPH_YPOS - tomorrow));
-		line.set_color(Color::red);
-		line.draw();
-		win->attach(line);
+		lines3.push_back(new Line(Point(LEFT_GRAPH_XPOS + (unit * i), DOWN_GRAPH_YPOS - today), Point(LEFT_GRAPH_XPOS + (unit * (i + 1)), DOWN_GRAPH_YPOS - tomorrow)));
+		lines3[i].set_color(Color::red);
+		lines3[i].draw();
+		win->attach(lines3[i]);
 	}
 	for (int i = 0; i < pinfo.numOfDate(); ++i)
 	{
 		today = pinfo.getOneDay(i).get_fat() * extension-downize;
 		
-		Text txt(Point(LEFT_GRAPH_XPOS + (unit * i), DOWN_GRAPH_YPOS - today), to_string((int)pinfo.getOneDay(i).get_fat()));
-		txt.set_color(Color::black);
-		txt.draw();
-		win->attach(txt);
+		txts3.push_back(new Text(Point(LEFT_GRAPH_XPOS + (unit * i), DOWN_GRAPH_YPOS - today), to_string((int)pinfo.getOneDay(i).get_fat())));
+		txts3[i].set_color(Color::black);
+		txts3[i].draw();
+		win->attach(txts3[i]);
 	}
 	//calorie
 	if (gender == MAN) {
@@ -249,21 +253,33 @@ void Drawing::drawPersonInfo(Drawing draw,Person_info pinfo,int gender)
 		today = pinfo.getOneDay(i).get_calorie() * extension-downize;
 		tomorrow = pinfo.getOneDay(i + 1).get_calorie() * extension-downize;
 
-		Line line(Point(RIGHT_GRAPH_XPOS + (unit * i), DOWN_GRAPH_YPOS - today), Point(RIGHT_GRAPH_XPOS + (unit * (i + 1)), DOWN_GRAPH_YPOS - tomorrow));
-		line.set_color(Color::red);
-		line.draw();
-		win->attach(line);
+		lines4.push_back(new Line(Point(RIGHT_GRAPH_XPOS + (unit * i), DOWN_GRAPH_YPOS - today), Point(RIGHT_GRAPH_XPOS + (unit * (i + 1)), DOWN_GRAPH_YPOS - tomorrow)));
+		lines4[i].set_color(Color::red);
+		lines4[i].draw();
+		win->attach(lines4[i]);
 	}
 	for (int i = 0; i < pinfo.numOfDate(); ++i)
 	{
 		today = pinfo.getOneDay(i).get_calorie() * extension-downize;
 
-		Text txt(Point(RIGHT_GRAPH_XPOS + (unit * i), DOWN_GRAPH_YPOS - today), to_string((int)pinfo.getOneDay(i).get_calorie()));
-		txt.set_color(Color::black);
-		txt.draw();
-		win->attach(txt);
+		txts4.push_back(new Text(Point(RIGHT_GRAPH_XPOS + (unit * i), DOWN_GRAPH_YPOS - today), to_string((int)pinfo.getOneDay(i).get_calorie())));
+		txts4[i].set_color(Color::black);
+		txts4[i].draw();
+		win->attach(txts4[i]);
 	}
 	win->wait_for_button();
+	win->detach(title); win->detach(line1); win->detach(line2); win->detach(line3); win->detach(line4);
+	win->detach(txt1); win->detach(txt2); win->detach(txt3); win->detach(txt4);
+	for (int i = 0; i < lines1.size(); ++i)
+	{
+		win->detach(lines1[i]); win->detach(lines2[i]); win->detach(lines3[i]); win->detach(lines4[i]);
+	}
+	for (int i = 0; i < txts1.size(); ++i)
+	{
+		win->detach(txts1[i]); win->detach(txts2[i]); win->detach(txts3[i]); win->detach(txts4[i]);
+	}
+	for (int i = 0; i < t.size(); ++i){	win->detach(t[i]);}
+	for (int i = 0; i < axis.size(); ++i) { win->detach(axis[i]); }
 }
 
 void Person_info::print_person_info()

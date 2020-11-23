@@ -3,12 +3,5 @@ syKim 1 23 170 73
 jaehaWilly 1 23 160 60
 chanLim 1 23 172 56
 silverStar 0 23 169 74
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> main
->>>>>>> 0821f9f430aca2e45b798fdcac4d1877c2513927
-=======
 teshyung 1 67 180 75
 man 1 24 170 64
->>>>>>> ac0ca8a860b895631838c039d5bfbf8af641f93f

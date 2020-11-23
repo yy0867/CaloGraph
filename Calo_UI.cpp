@@ -9,6 +9,8 @@ vector<string> user_del_sel;
 vector<string> user_create_sel;
 vector<string> user_sel_choice;
 
+Drawing draw;
+
 void gotoxy(int x, int y) {
 	COORD pos = { x, y };
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
@@ -37,6 +39,7 @@ void init_calo_ui()
 
 	user_sel_choice.push_back("1. Analyze");
 	user_sel_choice.push_back("2. Add Information");
+	draw.setWindow(Point(150, 150), 1000, 800, "CaloGraph");
 }
 
 void print_edge(int height, int width)
@@ -166,7 +169,7 @@ void print_user_choice(string person_name, bool gender)
 	int res;
 	if((res = cursor(user_choice_coord)) == -1) return;
 	else if (res == 0) {
-		Drawing draw(Point(150, 150), 1000, 800, "CaloGraph");
+		//Drawing draw(Point(150, 150), 1000, 800, "CaloGraph");
 		person_name += ".txt";
 
 		Person_info pinfo(person_name);
@@ -259,9 +262,5 @@ KEY get_key()
 	case 27:
 		return KEY::ESC;
 	}
-<<<<<<< HEAD
-=======
-
 	return KEY::NONE;
->>>>>>> 1bd59d1e1cd265e90410edaec58524c1a98a4e4a
 }
