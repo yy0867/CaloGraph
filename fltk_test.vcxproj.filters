@@ -98,6 +98,9 @@
     <ClInclude Include="drawing_graph.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="compare_data.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="information.txt">

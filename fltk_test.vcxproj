@@ -155,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Calo_UI.h" />
+    <ClInclude Include="compare_data.h" />
     <ClInclude Include="DatePerNutrition.h" />
     <ClInclude Include="drawing_graph.h" />
     <ClInclude Include="fltk.h" />
