@@ -162,7 +162,6 @@ vector<string> name_to_vector(vector<Information> infos)
 
 void draw_graph(string name, bool gender)
 {
-	Drawing draw(Point(150, 150), 1000, 800, "CaloGraph");
 	name += ".txt";
 
 	Person_info pinfo(name);
