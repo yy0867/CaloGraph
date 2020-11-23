@@ -3,6 +3,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <locale>
+#include <atlstr.h>
 using namespace std;
 
 Nutrition::Nutrition()
@@ -72,6 +73,13 @@ wstring Food::get_one_info()
 	return line;
 }
 
+string Food::get_name() const
+{
+	USES_CONVERSION;
+	string str_name(W2A(food_name.c_str()));
+	return str_name;
+}
+
 Foods_info::Foods_info()
 {
 	read_from_file();
@@ -79,9 +87,13 @@ Foods_info::Foods_info()
 
 void Foods_info::read_from_file()
 {
-	wcout.imbue(locale("ko_KR.UTF-8"));
-	wcin.imbue(locale("ko_KR.UTF-8"));
-	locale::global(locale("ko_KR.UTF-8"));
+	//wcout.imbue(locale("ko_KR.UTF-8"));
+	//wcin.imbue(locale("ko_KR.UTF-8"));
+	//locale::global(locale("ko_KR.UTF-8"));
+
+	wcout.imbue(locale("korean"));
+	wcin.imbue(locale("korean"));
+	locale::global(locale("korean"));
 
 	wifstream foodFile("foodlist.txt");
 	if (!foodFile.is_open()) {
@@ -122,9 +134,14 @@ void Foods_info::print_foods_info()
 		wcout << foods[i].get_one_info() << endl;
 }
 
-int Foods_info::is_exist(wstring food_name) {
+int Foods_info::is_exist(wstring food_name_wstr)
+{
+	USES_CONVERSION;
+	string food_name_str(W2A(food_name_wstr.c_str()));
+
 	for (int i = 0; i < foods.size(); i++) {
-		if (food_name == foods[i].get_name()) return i;
+		if (food_name_str == foods[i].get_name())
+			return i;
 	}
 
 	return -1;

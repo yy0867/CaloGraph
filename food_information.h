@@ -41,7 +41,8 @@ public:
 	Food(wstring one_line);
 	wstring get_one_info();		// name car pro fat cal 한줄 반환
 
-	wstring get_name() const { return food_name; }
+	wstring get_name_wstr() const { return food_name; }
+	string get_name() const;
 	int getCarbo() const { return nutrition.getCarbo(); }
 	int getProtein() const { return nutrition.getProtein(); }
 	int getFat() const { return nutrition.getFat(); }
@@ -63,6 +64,7 @@ public:
 
 	size_t getSize() const { return foods.size(); }
 	Food operator[](int index);
+	
 
 private:
 	vector<Food> foods;
