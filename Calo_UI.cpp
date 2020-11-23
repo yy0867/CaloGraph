@@ -40,6 +40,7 @@ void init_calo_ui()
 	user_sel_choice.push_back("1. Analyze");
 	user_sel_choice.push_back("2. Add Information");
 	draw.setWindow(Point(150, 150), 1000, 800, "CaloGraph");
+	draw.winp()->color(Color::white);
 }
 
 void print_edge(int height, int width)
