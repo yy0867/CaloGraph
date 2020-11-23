@@ -108,5 +108,8 @@
     </Text>
     <Text Include="food_info.txt" />
     <Text Include="man.txt" />
+    <Text Include="foodlist.txt">
+      <Filter>소스 파일</Filter>
+    </Text>
   </ItemGroup>
 </Project>

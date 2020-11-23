@@ -173,6 +173,7 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="foodlist.txt" />
     <Text Include="food_info.txt" />
     <Text Include="information.txt" />
     <Text Include="man.txt" />

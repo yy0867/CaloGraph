@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-이재하 1 160 170 60
-임찬형 1 172 170 56
-김은성 0 169 170 74
-가나다 1 1 1 1
-SilverStar 1 23 170 60
-=======
 teonPark 1 24 160 234
 syKim 1 23 170 73
 jaehaWilly 1 23 160 60
 chanLim 1 23 172 56
 silverStar 0 23 169 74
->>>>>>> main
+teshyung 1 67 180 75
+man 1 24 170 64
+woman 0 23 160 48
+jaeha 1 23 170 65

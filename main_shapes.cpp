@@ -14,12 +14,15 @@ void print()
 	cout << "now print graph" << endl;
 }
 
-int main() {
-	Foods_info xaeha;
+int main()
+{
+	system(" mode  con lines=50   cols=130 ");
+	init_calo_ui();
 
-	Food new_food("ÀÌÀçÇÏ", 100, 100, 100, 100);
-	xaeha.add_food(new_food);
+	while (1) {
+		print_edge();
+		print_main_menu();
+	}
 
-	xaeha.print_foods_info();
 	return 0;
 }

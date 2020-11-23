@@ -2,10 +2,14 @@
 #include "Information.h"
 
 vector<pair<int, int>> menu_coord;
+vector<pair<int, int>> user_choice_coord;
 vector<string> main_menu_sel;
 vector<string> user_sel_sel;
 vector<string> user_del_sel;
 vector<string> user_create_sel;
+vector<string> user_sel_choice;
+
+Drawing draw;
 
 void gotoxy(int x, int y) {
 	COORD pos = { x, y };
@@ -29,6 +33,14 @@ void init_calo_ui()
 	main_menu_sel.push_back("1. Select User");
 	main_menu_sel.push_back("2. Create User");
 	main_menu_sel.push_back("3. Delete User");
+
+	user_choice_coord.push_back(make_pair(5, 3));
+	user_choice_coord.push_back(make_pair(5, 7));
+
+	user_sel_choice.push_back("1. Analyze");
+	user_sel_choice.push_back("2. Add Information");
+	draw.setWindow(Point(150, 150), 1000, 800, "CaloGraph");
+	draw.winp()->color(Color::white);
 }
 
 void print_edge(int height, int width)
@@ -48,6 +60,8 @@ void print_edge(int height, int width)
 		}
 		cout << endl;
 	}
+
+	cout << endl << "Press ESC to previous menu / EXIT";
 }
 
 void print_textbox(pair<int, int> lu, string msg)
@@ -77,9 +91,15 @@ void print_main_menu()
 	for (int i = 0; i < 3; i++) {
 		print_textbox(menu_coord[i], main_menu_sel[i]);
 	}
-	int res = cursor(menu_coord, main_menu_sel);
+	int res = cursor(menu_coord);
 
 	switch (res) {
+	case -1:
+		system("cls");
+		print_edge();
+		gotoxy(3, 5);
+		cout << "Exit Program!";
+		exit(1);
 	case 0:
 		print_user_sel();
 		break;
@@ -92,7 +112,7 @@ void print_main_menu()
 	}
 }
 
-int cursor(vector<pair<int, int>> sels, vector<string> msgs)
+int cursor(vector<pair<int, int>> sels)
 {
 	int i = 0;
 	KEY key;
@@ -100,12 +120,12 @@ int cursor(vector<pair<int, int>> sels, vector<string> msgs)
 		pair<int, int> t = make_pair(sels[i].first - 2, sels[i].second);
 		gotoxy(t);
 
-		cout << "> ";
+		cout << ">";
 
 		key = get_key();
 		if (key == KEY::ESC) {
 			gotoxy(0, 32);
-			exit(1);
+			return -1;
 		}
 		else if (key == KEY::ENTER) return i;
 		
@@ -137,6 +157,35 @@ vector<string> name_to_vector(vector<Information> infos)
 	return names;
 }
 
+void draw_graph(string name, bool gender)
+{
+	Drawing draw(Point(150, 150), 1000, 800, "CaloGraph");
+	name += ".txt";
+
+	Person_info pinfo(name);
+	draw.drawPersonInfo(draw, pinfo, gender);
+}
+
+void print_user_choice(string person_name, bool gender)
+{
+	system("cls");
+	print_edge();
+
+	for (int i = 0; i < user_sel_choice.size(); i++) {
+		gotoxy(user_choice_coord[i].first, user_choice_coord[i].second);
+		cout << user_sel_choice[i];
+	}
+
+	int res;
+	if((res = cursor(user_choice_coord)) == -1) return;
+	else if (res == 0) {
+		draw_graph(person_name, gender);
+	}
+	else if (res == 1) {
+		
+	}
+}
+
 void print_user_sel() 
 {
 	system("cls");
@@ -156,7 +205,10 @@ void print_user_sel()
 		cout << info.get_name() << endl;
 	}
 
-	cursor(coords, names);
+	int res;
+	if ((res = cursor(coords)) == -1) return;
+	
+	print_user_choice(infos[res].get_name(), infos[res].get_gender());
 }
 
 void print_user_create()
@@ -193,7 +245,7 @@ void print_user_del()
 		cout << info.get_name() << endl;
 	}
 
-	int index = cursor(coords, names);
+	int index = cursor(coords);
 	infos.erase(infos.begin() + index);
 
 	save_to_txt(infos);
