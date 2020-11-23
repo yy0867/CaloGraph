@@ -153,6 +153,15 @@ vector<string> name_to_vector(vector<Information> infos)
 	return names;
 }
 
+void draw_graph(string name, bool gender)
+{
+	Drawing draw(Point(150, 150), 1000, 800, "CaloGraph");
+	name += ".txt";
+
+	Person_info pinfo(name);
+	draw.drawPersonInfo(draw, pinfo, gender);
+}
+
 void print_user_choice(string person_name, bool gender)
 {
 	system("cls");
@@ -166,11 +175,7 @@ void print_user_choice(string person_name, bool gender)
 	int res;
 	if((res = cursor(user_choice_coord)) == -1) return;
 	else if (res == 0) {
-		Drawing draw(Point(150, 150), 1000, 800, "CaloGraph");
-		person_name += ".txt";
-
-		Person_info pinfo(person_name);
-		draw.drawPersonInfo(draw, pinfo, gender);
+		draw_graph(person_name, gender);
 	}
 	else if (res == 1) {
 		
@@ -259,9 +264,5 @@ KEY get_key()
 	case 27:
 		return KEY::ESC;
 	}
-<<<<<<< HEAD
-=======
-
 	return KEY::NONE;
->>>>>>> 1bd59d1e1cd265e90410edaec58524c1a98a4e4a
 }

@@ -38,6 +38,15 @@ int main()
 		print_main_menu();
 	}
 
+	/*string person_name = "man";
+	bool gender = true;
+
+	Drawing draw(Point(150, 150), 1000, 800, "CaloGraph");
+	person_name += ".txt";
+
+	Person_info pinfo(person_name);
+	draw.drawPersonInfo(draw, pinfo, gender);*/
+
 	/*Foods_info xaeha;
 
 	Food new_food(L"¿Ã¿Á«œ", 100, 100, 100, 100);

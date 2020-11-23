@@ -135,7 +135,7 @@ void Drawing::drawPersonInfo(Drawing draw,Person_info pinfo,int gender)
 	draw.attachAxis(LEFT_GRAPH_XPOS, DOWN_GRAPH_YPOS, "fat", pinfo.numOfDate(), dates);
 	draw.attachAxis(RIGHT_GRAPH_XPOS, DOWN_GRAPH_YPOS, "calorie", pinfo.numOfDate(), dates);
 	double today, tomorrow;
-	double unit = (double)AXIS_WIDTH / (pinfo.numOfDate()-1);
+	double unit = (double)AXIS_WIDTH / (pinfo.numOfDate() - 1);
 
 	//average values
 	int c, p, f, cal;

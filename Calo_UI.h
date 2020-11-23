@@ -36,7 +36,8 @@ void print_edge(int height = EDGE_HEIGHT, int width = EDGE_WIDTH);
 void print_main_menu();
 void print_textbox(pair<int, int> lu, string msg); //ru: right up, ld: left down
 int cursor(vector<pair<int, int>> sels);
-void print_user_choice(string person_name);
+void draw_graph(string name, bool gender);
+void print_user_choice(string person_name, bool gender);
 void print_user_sel();
 void print_user_create();
 void print_user_del();
