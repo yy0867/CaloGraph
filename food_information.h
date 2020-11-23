@@ -58,10 +58,11 @@ public:
 	Foods_info();			// 생성자에서 read_from_file() 호출
 	void add_food(Food source);
 	void print_foods_info();
-
+	int is_exist(wstring food_name);
 	void read_from_file();	// foodlist.txt 파일 읽어서 벡터에 저장
 
 	size_t getSize() const { return foods.size(); }
+	Food operator[](int index);
 
 private:
 	vector<Food> foods;

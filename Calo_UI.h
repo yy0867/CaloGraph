@@ -1,6 +1,7 @@
 #ifndef __CALO_UI_H__
 #define __CALO_UI_H__
 
+#include "food_information.h"
 #include "drawing_graph.h"
 #include <Windows.h>
 #include <iostream>

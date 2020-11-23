@@ -29,6 +29,7 @@ void Information::input_information()
 	y += 3;
 	cout << "Input name >> ";
 	cin >> name;
+	if (name == "q" || name == "Q") return;
 
 	gotoxy(3, y);
 	y += 1;

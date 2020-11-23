@@ -121,3 +121,15 @@ void Foods_info::print_foods_info()
 	for (int i = 0; i < foods.size(); ++i)
 		wcout << foods[i].get_one_info() << endl;
 }
+
+int Foods_info::is_exist(wstring food_name) {
+	for (int i = 0; i < foods.size(); i++) {
+		if (food_name == foods[i].get_name()) return i;
+	}
+
+	return -1;
+}
+
+Food Foods_info::operator[](int index) {
+	return foods[index];
+}

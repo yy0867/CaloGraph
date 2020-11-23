@@ -3,6 +3,7 @@
 
 vector<pair<int, int>> menu_coord;
 vector<pair<int, int>> user_choice_coord;
+vector<pair<int, int>> food_list_coord;
 vector<string> main_menu_sel;
 vector<string> user_sel_sel;
 vector<string> user_del_sel;
@@ -41,6 +42,8 @@ void init_calo_ui()
 	user_sel_choice.push_back("2. Add Information");
 	draw.setWindow(Point(150, 150), 1000, 800, "CaloGraph");
 	draw.winp()->color(Color::white);
+
+	
 }
 
 void print_edge(int height, int width)
@@ -166,6 +169,22 @@ void draw_graph(string name, bool gender)
 	draw.drawPersonInfo(draw, pinfo, gender);
 }
 
+wstring str2wstr(string str)
+{
+	string message_a = str;
+	wstring message_w;
+	message_w.assign(message_a.begin(), message_a.end());
+	return message_w;
+}
+
+string wstr2str(wstring wstr) 
+{
+	std::wstring message_w = wstr;
+	std::string message_a;
+	message_a.assign(message_w.begin(), message_w.end());
+	return message_a;
+}
+
 void print_user_choice(string person_name, bool gender)
 {
 	system("cls");
@@ -182,7 +201,46 @@ void print_user_choice(string person_name, bool gender)
 		draw_graph(person_name, gender);
 	}
 	else if (res == 1) {
+		Person_info pinfo(person_name + ".txt");
+		Foods_info food_infos;
+		string food;
+		string date;
+
+		print_edge();
+		gotoxy(3, 2);
+		cout << "Input what you eat! >> ";
+		cin >> food;
+
+		gotoxy(3, 5);
+		cout << "When did you eat? [mm/dd] >> ";
+
+		while (1) {
+			int i;
+			cin >> date;
+			for (i = 0; i < date.length(); i++) {
+				if (date[i] == '/') continue;
+				if (!isdigit(date[i])) {
+					gotoxy(3, 7);
+					cout << "Please input form [mm/dd] >> ";
+					break;
+				}
+			}
+			if (i == date.length()) break;
+		}
 		
+		int res = food_infos.is_exist(str2wstr(food));
+		if (res == -1) {
+			//open url
+			//add information from user
+		}
+		else {
+			Food f = food_infos[res];
+			food = "";
+			food = wstr2str(f.get_one_info());
+
+			OneDay od(date + food);
+			pinfo.add_day(od);
+		}
 	}
 }
 
