@@ -2,6 +2,8 @@
 #include "Information.h"
 #include <locale>
 #include <atlstr.h>
+#include <shellapi.h>
+#include <Windows.h>
 
 vector<pair<int, int>> menu_coord;
 vector<pair<int, int>> user_choice_coord;
@@ -184,6 +186,32 @@ string wstr2str(wstring wstr)
 	return message_a;
 }
 
+Food input_food_info(wstring food_name)
+{
+	print_edge();
+	gotoxy(5, 3);
+	wcout << "Input information about " << food_name;
+
+	int carbo, pro, fat, cal;
+	gotoxy(5, 5);
+	cout << "Input carbohydrate[탄수화물] content >> ";
+	cin >> carbo;
+
+	gotoxy(5, 7);
+	cout << "Input protein[단백질] content >> ";
+	cin >> pro;
+
+	gotoxy(5, 9);
+	cout << "Input fat[지방] content >> ";
+	cin >> fat;
+
+	gotoxy(5, 11);
+	cout << "Input Calories[칼로리] content >> ";
+	cin >> cal;
+
+	return Food(food_name, carbo, pro, fat, cal);
+}
+
 void print_user_choice(string person_name, bool gender)
 {
 	system("cls");
@@ -231,8 +259,38 @@ void print_user_choice(string person_name, bool gender)
 		
 		int res = food_infos.is_exist(food);
 		if (res == -1) {
-			//open url
-			//add information from user
+			gotoxy(6, 7);
+			cout << "Press any key to open URL / ESC to exit";
+			char t = _getch();
+			if (t == 27) return;
+
+			wstring link = L"https://www.myfitnesspal.com/ko/food/search?page=1&search=";
+			link += food;
+
+			ShellExecute(0, 0, link.c_str(), 0, 0, SW_SHOW);
+
+			Food f = input_food_info(food);
+
+			int dateIndex = pinfo.dateExist(date);
+			if (dateIndex != -1)
+			{
+				int ncar, npro, nfat, ncal, ocar, opro, ofat, ocal;	//new,old
+				ocar = pinfo[dateIndex].get_carbo(); opro = pinfo[dateIndex].get_protein();
+				ofat = pinfo[dateIndex].get_fat(); ocal = pinfo[dateIndex].get_calorie();
+
+				ncar = f.getCarbo() + ocar; npro = f.getProtein() + opro;
+				nfat = f.getFat() + ofat; ncal = f.getCalorie() + ocal;
+
+				string newInfo = date + " " + to_string(ncar) + " " + to_string(npro) + " " + to_string(nfat) + " " + to_string(ncal);
+				pinfo.setOneDay(dateIndex, OneDay(newInfo));
+				pinfo.write_on_file(person_name + ".txt");
+			}
+			else
+			{
+				string newInfo = "";
+				newInfo = date + " " + to_string(f.getCarbo()) + " " + to_string(f.getProtein()) + " " + to_string(f.getFat()) + " " + to_string(f.getCalorie());
+				pinfo.add_day(OneDay(newInfo));
+			}
 		}
 		else {
 			Food f = food_infos[res];
