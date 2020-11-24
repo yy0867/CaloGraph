@@ -262,7 +262,8 @@ void print_user_choice(string person_name, bool gender)
 			gotoxy(6, 7);
 			wcout << food << L"is not exist in our list. Would you like to search? [y / n] >> ";
 			while (1) {
-				char t = _getch();
+				char t;
+				cin >> t;
 				if (t == 'y' || t == 'Y') break;
 				else if (t == 'n' || t == 'N') return;
 				gotoxy(6, 7);
