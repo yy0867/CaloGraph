@@ -26,20 +26,20 @@ using namespace Graph_lib;
 class OneDay {
 public:
 	OneDay(string one_line);
-	
+
 	string get_one_info();
 	string get_date() const { return date; }
-	double get_carbo() const { return carbo; }
-	double get_protein() const { return protein; }
-	double get_fat() const { return fat; }
-	double get_calorie() const { return calorie; }
+	int get_carbo() const { return carbo; }
+	int get_protein() const { return protein; }
+	int get_fat() const { return fat; }
+	int get_calorie() const { return calorie; }
 
 private:
 	string date;
-	double carbo;
-	double protein;
-	double fat;
-	double calorie;
+	int carbo;
+	int protein;
+	int fat;
+	int calorie;
 };
 
 class Person_info {
@@ -47,11 +47,18 @@ public:
 	Person_info(string filename);
 	void add_day(OneDay source);
 	int numOfDate() { return person.size(); }
+	int dateExist(string date);
+
+	void setOneDay(int index,OneDay source);
 
 	void print_person_info();
 	OneDay getOneDay(int i) const { return person[i]; }
 	string getPath() const { return path; }
 	string getName();
+
+	void write_on_file(string filename);
+
+	OneDay operator[](int i) { return person[i]; }
 private:
 	vector<OneDay> person;
 	string path;
