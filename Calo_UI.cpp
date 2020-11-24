@@ -1,5 +1,7 @@
 #include "Calo_UI.h"
 #include "Information.h"
+#include <locale>
+#include <atlstr.h>
 
 vector<pair<int, int>> menu_coord;
 vector<pair<int, int>> user_choice_coord;
@@ -42,8 +44,6 @@ void init_calo_ui()
 	user_sel_choice.push_back("2. Add Information");
 	draw.setWindow(Point(150, 150), 1000, 800, "CaloGraph");
 	draw.winp()->color(Color::white);
-
-	
 }
 
 void print_edge(int height, int width)
@@ -202,13 +202,15 @@ void print_user_choice(string person_name, bool gender)
 	else if (res == 1) {
 		Person_info pinfo(person_name + ".txt");
 		Foods_info food_infos;
-		string food;
+		wstring food;
 		string date;
+
+		USES_CONVERSION;
 
 		print_edge();
 		gotoxy(3, 2);
 		cout << "Input what you eat! >> ";
-		cin >> food;
+		wcin >> food;
 
 		gotoxy(3, 5);
 		cout << "When did you eat? [mm/dd] >> ";
@@ -227,18 +229,33 @@ void print_user_choice(string person_name, bool gender)
 			if (i == date.length()) break;
 		}
 		
-		int res = food_infos.is_exist(str2wstr(food));
+		int res = food_infos.is_exist(food);
 		if (res == -1) {
 			//open url
 			//add information from user
 		}
 		else {
 			Food f = food_infos[res];
-			food = "";
-			food = wstr2str(f.get_one_info());
+			int dateIndex=pinfo.dateExist(date);
+			if (dateIndex!=-1)
+			{
+				int ncar, npro, nfat, ncal, ocar, opro, ofat, ocal;	//new,old
+				ocar = pinfo[dateIndex].get_carbo(); opro = pinfo[dateIndex].get_protein();
+				ofat = pinfo[dateIndex].get_fat(); ocal = pinfo[dateIndex].get_calorie();
 
-			OneDay od(date + food);
-			pinfo.add_day(od);
+				ncar = f.getCarbo() + ocar; npro = f.getProtein() + opro;
+				nfat = f.getFat() + ofat; ncal = f.getCalorie() + ocal;
+
+				string newInfo = date + " " + to_string(ncar) + " " + to_string(npro) + " " + to_string(nfat) + " " + to_string(ncal);
+				pinfo.setOneDay(dateIndex, OneDay(newInfo));
+				pinfo.write_on_file(person_name+".txt");
+			}
+			else
+			{
+				string newInfo = "";
+				newInfo = date + " " + to_string(f.getCarbo()) + " " + to_string(f.getProtein()) + " " + to_string(f.getFat()) + " " + to_string(f.getCalorie());
+				pinfo.add_day(OneDay(newInfo));
+			}
 		}
 	}
 }

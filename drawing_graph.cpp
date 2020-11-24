@@ -9,31 +9,32 @@ OneDay::OneDay(string one_line)
 	for (int i = 0; i < one_line.size(); ++i)
 	{
 		if (one_line[i] == ' ')count++;
-
-		switch (count)
-		{
-		case 0: info[0] += one_line[i]; break;
-		case 1: info[1] += one_line[i]; break;
-		case 2: info[2] += one_line[i]; break;
-		case 3: info[3] += one_line[i]; break;
-		case 4: info[4] += one_line[i]; break;
+		else {
+			switch (count)
+			{
+			case 0: info[0] += one_line[i]; break;
+			case 1: info[1] += one_line[i]; break;
+			case 2: info[2] += one_line[i]; break;
+			case 3: info[3] += one_line[i]; break;
+			case 4: info[4] += one_line[i]; break;
+			}
 		}
 	}
 
 	date = info[0];
-	carbo = stod(info[1]);
-	protein = stod(info[2]);
-	fat = stod(info[3]);
-	calorie = stod(info[4]);
+	carbo = stoi(info[1]);
+	protein = stoi(info[2]);
+	fat = stoi(info[3]);
+	calorie = stoi(info[4]);
 }
 
 string OneDay::get_one_info()
 {
 	string line = date;
-	line += " " + to_string((int)carbo);
-	line += " " + to_string((int)protein);
-	line += " " + to_string((int)fat);
-	line += " " + to_string((int)calorie);
+	line += " " + to_string(carbo);
+	line += " " + to_string(protein);
+	line += " " + to_string(fat);
+	line += " " + to_string(calorie);
 
 	return line;
 }
@@ -58,6 +59,20 @@ Person_info::Person_info(string filename)
 	else cout << "file doesn't exist";
 
 	ifs.close();
+}
+void Person_info::setOneDay(int index,OneDay source)
+{
+	person[index] = source;
+}
+int Person_info::dateExist(string date)
+{
+	for (int i = 0; i < numOfDate(); ++i)
+	{
+		if (person[i].get_date() == date)
+			return i;
+	}
+	
+	return -1;
 }
 
 void Person_info::add_day(OneDay source)
@@ -84,6 +99,26 @@ string Person_info::getName()
 		name += path[i++];
 	}
 	return name;
+}
+
+void Person_info::write_on_file(string filename)
+{
+	ofstream ofs(filename);
+	if (ofs.is_open())
+	{
+		for (int i = 0; i < numOfDate(); ++i)
+		{
+			if (i == numOfDate() - 1) {
+				ofs << person[i].get_one_info();
+			}
+			else {
+				ofs << person[i].get_one_info() + "\n";
+			}
+		}
+	}
+	else cout << "file doesn't exist";
+
+	ofs.close();
 }
 
 Drawing::Drawing(Point tl, int width, int height, string name)

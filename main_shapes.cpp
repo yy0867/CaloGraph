@@ -1,4 +1,4 @@
-#include "drawing_graph.h"
+ï»¿#include "drawing_graph.h"
 #include "food_information.h"
 #include "Information.h"
 #include "Calo_UI.h"
@@ -18,11 +18,6 @@ void print()
 
 int main()
 {
-	
-
-	USES_CONVERSION;
-	// string, cout, cinÀ¸·Î ÇÑ±Û ¾È³ª¿À¸é Ãß°¡ÇØÁÙ °Í 
-
 	system(" mode  con lines=50   cols=130 ");
 	init_calo_ui();
 
@@ -30,16 +25,20 @@ int main()
 		print_edge();
 		print_main_menu();
 	}
-	
-	/*Foods_info xaeha;
 
-	Food new_food(L"ÀÌÀçÇÏ", 100, 100, 100, 100);
+	USES_CONVERSION;
+	// string, cout, cinìœ¼ë¡œ í•œê¸€ ì•ˆë‚˜ì˜¤ë©´ ì¶”ê°€í•´ì¤„ ê²ƒ 
+
+	/*
+	Foods_info xaeha;
+
+	Food new_food(L"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", 100, 100, 100, 100);
 	xaeha.add_food(new_food);
 
 	xaeha.print_foods_info();
 	cout << endl << endl << endl;
 
-	cout << "xaeha µîÀå À§Ä¡: " << xaeha.is_exist(L"ÀÌÀçÇÏ");*/
-
+	cout << "xaeha ë“±ìž¥ ìœ„ì¹˜: " << xaeha.is_exist(L"ì´ìž¬í•˜");
+	*/
 	return 0;
 }
