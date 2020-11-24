@@ -260,9 +260,16 @@ void print_user_choice(string person_name, bool gender)
 		int res = food_infos.is_exist(food);
 		if (res == -1) {
 			gotoxy(6, 7);
-			cout << "Press any key to open URL / ESC to exit";
-			char t = _getch();
-			if (t == 27) return;
+			wcout << food << L"is not exist in our list. Would you like to search? [y / n] >> ";
+			while (1) {
+				char t = _getch();
+				if (t == 'y' || t == 'Y') break;
+				else if (t == 'n' || t == 'N') return;
+				gotoxy(6, 7);
+				cout << "                                                                     ";
+				gotoxy(6, 7);
+				cout << "Press [y / n] >> ";
+			}
 
 			wstring link = L"https://www.myfitnesspal.com/ko/food/search?page=1&search=";
 			link += food;
