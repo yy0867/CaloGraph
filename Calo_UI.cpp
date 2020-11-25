@@ -186,28 +186,68 @@ string wstr2str(wstring wstr)
 	return message_a;
 }
 
+bool is_digit(string input) {
+	for (char c : input) {
+		if (!('0' <= c && c <= '9')) return false;
+	}
+	return true;
+}
+
 Food input_food_info(wstring food_name)
 {
 	print_edge();
 	gotoxy(5, 3);
 	wcout << "Input information about " << food_name;
 
+	string input;
 	int carbo, pro, fat, cal;
 	gotoxy(5, 5);
 	cout << "Input carbohydrate[탄수화물] content >> ";
-	cin >> carbo;
+	while (1) {
+		cin >> input;
+		if (is_digit(input)) {
+			carbo = stoi(input);
+			break;
+		}
+		gotoxy(5, 6);
+		cout << "Please input an integer >> ";
+	}
 
-	gotoxy(5, 7);
-	cout << "Input protein[단백질] content >> ";
-	cin >> pro;
-
-	gotoxy(5, 9);
+	gotoxy(5, 8);
 	cout << "Input fat[지방] content >> ";
-	cin >> fat;
+	while (1) {
+		cin >> input;
+		if (is_digit(input)) {
+			fat = stoi(input);
+			break;
+		}
+		gotoxy(5, 9);
+		cout << "Please input an integer >> ";
+	}
 
 	gotoxy(5, 11);
-	cout << "Input Calories[칼로리] content >> ";
-	cin >> cal;
+	cout << "Input protein[단백질] content >> ";
+	while (1) {
+		cin >> input;
+		if (is_digit(input)) {
+			pro = stoi(input);
+			break;
+		}
+		gotoxy(5, 12);
+		cout << "Please input an integer >> ";
+	}
+
+	gotoxy(5, 14);
+	cout << "Input calories[칼로리] content >> ";
+	while (1) {
+		cin >> input;
+		if (is_digit(input)) {
+			cal = stoi(input);
+			break;
+		}
+		gotoxy(5, 15);
+		cout << "Please input an integer >> ";
+	}
 
 	return Food(food_name, carbo, pro, fat, cal);
 }
@@ -262,13 +302,15 @@ void print_user_choice(string person_name, bool gender)
 			gotoxy(6, 7);
 			wcout << food << L"is not exist in our list. Would you like to search? [y / n] >> ";
 			while (1) {
-				char t = _getch();
+				char t;
+				cin >> t;
 				if (t == 'y' || t == 'Y') break;
 				else if (t == 'n' || t == 'N') return;
 				gotoxy(6, 7);
 				cout << "                                                                     ";
 				gotoxy(6, 7);
 				cout << "Press [y / n] >> ";
+				fflush(stdin);
 			}
 
 			wstring link = L"https://www.myfitnesspal.com/ko/food/search?page=1&search=";
@@ -277,6 +319,9 @@ void print_user_choice(string person_name, bool gender)
 			ShellExecute(0, 0, link.c_str(), 0, 0, SW_SHOW);
 
 			Food f = input_food_info(food);
+
+			Foods_info finfo;
+			finfo.add_food(f);
 
 			int dateIndex = pinfo.dateExist(date);
 			if (dateIndex != -1)
