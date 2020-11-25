@@ -11,3 +11,6 @@ string compare_recent_carbo(string username, int gender);
 string compare_recent_protein(string username, int gender);
 string compare_recent_fat(string username, int gender);
 string compare_recent_calorie(string username, int gender);
+
+string compare_average_nutrition(string username, int gender);
+string compare_recent_nutrition(string username, int gender);

@@ -1,4 +1,5 @@
 #include "drawing_graph.h"
+#include "compare_data.h"
 #include <iostream>
 #include <cstdlib>
 
@@ -302,9 +303,18 @@ void Drawing::drawPersonInfo(Drawing draw,Person_info pinfo,int gender)
 		txts4[i].draw();
 		win->attach(txts4[i]);
 	}
+
+	//comment
+	Text comment1(Point(50, 750), compare_average_nutrition(pinfo.getPath(), gender));
+	comment1.set_color(Color::magenta); comment1.draw(); win->attach(comment1);
+
+	Text comment2(Point(50, 770), compare_recent_nutrition(pinfo.getPath(), gender));
+	comment2.set_color(Color::dark_cyan); comment2.draw(); win->attach(comment2);
+	
+
 	win->wait_for_button();
 	win->detach(title); win->detach(line1); win->detach(line2); win->detach(line3); win->detach(line4);
-	win->detach(txt1); win->detach(txt2); win->detach(txt3); win->detach(txt4);
+	win->detach(txt1); win->detach(txt2); win->detach(txt3); win->detach(txt4); win->detach(comment1); win->detach(comment2);
 	for (int i = 0; i < lines1.size(); ++i)
 	{
 		win->detach(lines1[i]); win->detach(lines2[i]); win->detach(lines3[i]); win->detach(lines4[i]);
