@@ -41,6 +41,5 @@ Debug/
 *.ilk
 
 # Executables
-*.exe
 *.out
 *.app
