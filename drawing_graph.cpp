@@ -79,11 +79,19 @@ int Person_info::dateExist(string date)
 void Person_info::add_day(OneDay source)
 {
 	person.push_back(source);
+	bool isEmpty = false;
+	ifstream ifs(path);
+	if (!ifs.good())
+		isEmpty = true;
+	ifs.close();
 
 	fstream ofs(path, fstream::out | fstream::app);
 	if (ofs.is_open())
 	{
-		ofs << "\n" + source.get_one_info();
+		if(isEmpty)
+			ofs << source.get_one_info();
+		else
+			ofs << "\n" + source.get_one_info();
 	}
 	else cout << "file doesn't exist";
 

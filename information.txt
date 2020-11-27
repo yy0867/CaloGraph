@@ -7,3 +7,6 @@ teshyung 1 67 180 75
 man 1 24 170 64
 woman 0 23 160 48
 jaeha 1 23 170 65
+User 1 25 170 60
+User2 1 25 15 15
+User3 1 2 1 3
