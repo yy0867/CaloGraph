@@ -5,7 +5,7 @@ This Program is Calculate the Nutritions, and Explain to Graph.
 Input user information(gender, nutrition per date) then Calograph will analyze your nutrition intake by comparing it to average intake.
 
 ----How to use Calograph---
-1. download fltk_test.exe and foodlist.txt ( these two must be in the same folder).
+1. download this file to zip, and unzip it.
 2. execute fltk_test.exe then you'll see 
 ![image](https://user-images.githubusercontent.com/37214724/100452366-59b72a00-30fc-11eb-980a-4501cd0fe743.png)
 3. if you don't enroll your user information, you choose [2.Create User]. (if you choose [1.Select User] without enroll any user, error will be happened)
