@@ -14,7 +14,7 @@ Input user information(gender, nutrition per date) then Calograph will analyze y
 5. if you wanna delete your information, choose [3.Delete User] and pick you own.
 ![image](https://user-images.githubusercontent.com/37214724/100494626-ac3d2880-3186-11eb-9dd2-caeeb04a478c.png)
 6. if you have your information file, choose [1.Select User]
-![image](https://user-images.githubusercontent.com/37214724/100494626-ac3d2880-3186-11eb-9dd2-caeeb04a478c.png)
+![image](https://user-images.githubusercontent.com/37214724/100494651-e4446b80-3186-11eb-973e-fdfcfbb5ac01.png)
 7. choose your own. and if you don't input your nutrition info per date, select [2.add information] and input when, what you ate.
 ![image](https://user-images.githubusercontent.com/37214724/100453090-b7984180-30fd-11eb-847c-d7586d092b95.png)
 8. if you wanna analyze your nutirition intake, select [1.Analyze] (%% if you don't input your info or you input just one day info, graph will not drew)
