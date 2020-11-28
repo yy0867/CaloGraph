@@ -8,7 +8,7 @@ Input user information(gender, nutrition per date) then Calograph will analyze y
 1. download fltk_test.exe and foodlist.txt ( these two must be in the same folder).
 2. execute fltk_test.exe then you'll see 
 ![image](https://user-images.githubusercontent.com/37214724/100452366-59b72a00-30fc-11eb-980a-4501cd0fe743.png)
-3. if you don't enroll your user information, you choose [2.Create User].
+3. if you don't enroll your user information, you choose [2.Create User]. (if you choose [1.Select User] without enroll any user, error will be happened)
 4. if you choose [2.Create User], input your information. then you can make your own.
 ![image](https://user-images.githubusercontent.com/37214724/100452583-c2060b80-30fc-11eb-909d-ccafc61fe5e5.png)
 5. if you wanna delete your information, choose [3.Delete User] and pick you own.
