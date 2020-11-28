@@ -12,7 +12,7 @@ Input user information(gender, nutrition per date) then Calograph will analyze y
 4. if you choose [2.Create User], input your information. then you can make your own.
 ![image](https://user-images.githubusercontent.com/37214724/100452583-c2060b80-30fc-11eb-909d-ccafc61fe5e5.png)
 5. if you wanna delete your information, choose [3.Delete User] and pick you own.
-![image](https://user-images.githubusercontent.com/37214724/100452750-16a98680-30fd-11eb-81a0-6a87e035d39f.png)
+![image](https://user-images.githubusercontent.com/37214724/100494626-ac3d2880-3186-11eb-9dd2-caeeb04a478c.png)
 6. if you have your information file, choose [1.Select User]
 ![image](https://user-images.githubusercontent.com/37214724/100494626-ac3d2880-3186-11eb-9dd2-caeeb04a478c.png)
 7. choose your own. and if you don't input your nutrition info per date, select [2.add information] and input when, what you ate.
